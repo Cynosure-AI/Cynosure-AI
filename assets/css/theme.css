@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/*
+ * Landing-page design tokens.
+ * Change this palette to reskin both the legacy component CSS and Tailwind
+ * utilities without hunting through individual Vue components.
+ */
+:root {
+  --theme-background: #070b0f;
+  --theme-surface: #0f1418;
+  --theme-surface-raised: #151b20;
+  --theme-foreground: #e9edf0;
+  --theme-muted: #8e9aa4;
+  --theme-subtle: #65717b;
+  --theme-border: rgb(255 255 255 / 10%);
+  --theme-border-strong: #30383e;
+  --theme-accent: #ff4e45;
+  --theme-accent-soft: rgb(255 78 69 / 10%);
+  --theme-success: #58c67e;
+  --theme-paper: #f1f0eb;
+  --theme-paper-foreground: #11171b;
+
+  --font-display: "Manrope", sans-serif;
+  --font-mono: "DM Mono", monospace;
+
+  /* Compatibility aliases used by the detailed landing illustrations. */
+  --bg: var(--theme-background);
+  --ink: var(--theme-foreground);
+  --muted: var(--theme-muted);
+  --line: var(--theme-border);
+  --accent: var(--theme-accent);
+  --paper: var(--theme-paper);
+  --paper-ink: var(--theme-paper-foreground);
+  --display: var(--font-display);
+  --mono: var(--font-mono);
+}
+
+@theme inline {
+  --color-page: var(--theme-background);
+  --color-surface: var(--theme-surface);
+  --color-surface-raised: var(--theme-surface-raised);
+  --color-foreground: var(--theme-foreground);
+  --color-muted: var(--theme-muted);
+  --color-subtle: var(--theme-subtle);
+  --color-border: var(--theme-border);
+  --color-accent: var(--theme-accent);
+  --color-accent-soft: var(--theme-accent-soft);
+  --color-success: var(--theme-success);
+  --color-paper: var(--theme-paper);
+  --color-paper-foreground: var(--theme-paper-foreground);
+  --font-sans: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+::selection {
+  background: var(--theme-accent);
+  color: white;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

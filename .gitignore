@@ -1,0 +1,12 @@
+#Default exclusions
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Node.js
+node_modules/
+
+# Nuxt
+.nuxt/
+.output/
