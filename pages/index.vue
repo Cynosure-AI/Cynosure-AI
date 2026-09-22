@@ -237,7 +237,7 @@ function closeMenu() {
                 aria-label="Add Slack MCP">+</button></div>
           </div>
           <div class="mcp-browser-foot mcp-setup-guide">
-            <span>Powered by the official MCP Registry, Smithery, Glama, and Cyno’s curated selection.</span>
+            <span>Powered by the official MCP Registry, Smithery, and Cyno’s curated selection.</span>
           </div>
         </div>
       </article>
@@ -367,10 +367,10 @@ function closeMenu() {
     </section>
 
     <section class="personalize">
-      <div class="section-kicker reveal"><span>04</span> Make it yours</div>
+      <div class="section-kicker reveal"><span>04</span> Your workspace. Your way.</div>
       <div class="personal-heading reveal">
         <div class="personal-copy">
-          <h2>Your workspace.<br /><em>Your way.</em></h2>
+          <h2>Make it <em>yours.</em></h2>
         </div>
         <p>From how Cynosure looks and listens to how every tool is allowed to act, the workspace is designed to adapt
           to you—not the other way around.</p>
