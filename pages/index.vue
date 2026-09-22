@@ -104,7 +104,7 @@ function closeMenu() {
     <section class="hero">
       <div class="hero-copy reveal">
         <div class="eyebrow"><span></span> The AI workspace that remembers</div>
-        <h1>Your models.<br />Your tools. <em>Your AI.</em></h1>
+        <h1>Your models.<br />Your tools. <br/><em>Your AI.</em></h1>
         <p class="hero-lede">A focused command center for working with local and remote AI. Connect any model, build
           persistent memory, and let capable agents get real work done.</p>
         <div class="hero-actions">
@@ -141,32 +141,7 @@ function closeMenu() {
           Studio</span><span><i><img src="/providers/openrouter.png" alt="" /></i>OpenRouter</span></div>
     </section>
 
-    <section class="feature-bar mini-features reveal" aria-label="Core platform features">
-      <article><span>◷</span>
-        <div>
-          <h3>Scheduling</h3>
-          <p>Automate recurring agent runs with flexible cron schedules.</p>
-        </div>
-      </article>
-      <article><span>⌘</span>
-        <div>
-          <h3>MCP native</h3>
-          <p>Connect standard Model Context Protocol servers and tools.</p>
-        </div>
-      </article>
-      <article><span>◇</span>
-        <div>
-          <h3>Composable agent teams</h3>
-          <p>Build workflows where focused specialists handle different parts of the task.</p>
-        </div>
-      </article>
-      <article><span>◈</span>
-        <div>
-          <h3>Channels</h3>
-          <p>Meet your agents in Telegram, Discord, and Slack.</p>
-        </div>
-      </article>
-    </section>
+
 
     <section class="intro product-overview" id="features">
       <div class="section-kicker reveal"><span>01</span> Your stack, your way</div>
