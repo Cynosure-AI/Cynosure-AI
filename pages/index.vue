@@ -228,9 +228,7 @@ function closeMenu() {
       <div class="memory-feature-list">
         <article class="feature large memory-feature reveal">
           <div class="feature-copy">
-            <div class="feature-icon">
-              <BrainCircuit :size="20" />
-            </div>
+
             <span class="feature-overline">FOCUSED RETRIEVAL</span>
             <h3>Memory that assembles the right context</h3>
             <p>Retrieval is layered to ensure it always provides exactly what the task needs.
@@ -272,9 +270,7 @@ function closeMenu() {
         </article>
         <article class="feature large graph-feature reveal">
           <div class="feature-copy">
-            <div class="feature-icon">
-              <Sparkles :size="20" />
-            </div>
+
             <span class="feature-overline">KNOWLEDGE GRAPH + DREAMING MODE</span>
             <h3>Memory that grows along with you</h3>
             <p>Your knowledge graph makes people, projects, facts, and their relationships visible. This provides useful
