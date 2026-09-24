@@ -10,7 +10,6 @@ import {
   EyeOff,
   FolderOpen,
   ListFilter,
-  Mail,
   Menu,
   Mic2,
   Network,
@@ -28,6 +27,22 @@ type DownloadPlatform = typeof downloadPlatforms[number]
 const menuOpen = ref(false)
 const currentPlatform = ref<DownloadPlatform>('Windows')
 const alternatePlatforms = computed(() => downloadPlatforms.filter(platform => platform !== currentPlatform.value))
+const mcpServices = [
+  { name: 'GitHub', category: 'Development', icon: 'github-icon.svg' },
+  { name: 'Gmail', category: 'Email', icon: 'gmail-icon.svg' },
+  { name: 'Outlook', category: 'Email', icon: 'microsoft-outlook-icon.svg' },
+  { name: 'Google Drive', category: 'Cloud files', icon: 'google-drive-color-icon.svg' },
+  { name: 'Slack', category: 'Messaging', icon: 'slack-icon.svg' },
+  { name: 'Discord', category: 'Messaging', icon: 'discord-color-icon.svg' },
+  { name: 'Claude Code', category: 'Development', icon: 'claude-code-icon.svg' },
+  { name: 'Codex', category: 'Development', icon: 'codex-icon.svg' },
+  { name: 'VS Code', category: 'Development', icon: 'visual-studio-code-icon.svg' },
+  { name: 'Chrome', category: 'Browser', icon: 'google-chrome-icon.svg' },
+  { name: 'Obsidian', category: 'Knowledge', icon: 'obsidian-icon.svg' },
+  { name: 'Canva', category: 'Design', icon: 'canva-icon.svg' },
+  { name: 'Reddit', category: 'Community', icon: 'reddit-icon.svg' },
+  { name: 'YouTube', category: 'Media', icon: 'youtube-color-icon.svg' },
+] as const
 let revealObserver: IntersectionObserver | undefined
 
 useSeoMeta({
@@ -185,15 +200,10 @@ function closeMenu() {
         <div class="mcp-browser" aria-label="MCP server browser with popular compatible services">
           <div class="mcp-browser-head"><span><i></i> MCP DIRECTORY</span><b>BROWSE + ADD</b></div>
           <div class="service-grid">
-            <div class="service"><img src="https://cdn.simpleicons.org/github/ffffff"
-                alt="" /><strong>GitHub</strong><small>Development</small><button type="button"
-                aria-label="Add GitHub MCP">+</button></div>
-            <div class="service"><img src="https://cdn.simpleicons.org/gmail/EA4335"
-                alt="" /><strong>Gmail</strong><small>Email</small><button type="button"
-                aria-label="Add Gmail MCP">+</button></div>
-            <div class="service">
-              <Mail :size="26" /><strong>Outlook</strong><small>Email</small><button type="button"
-                aria-label="Add Outlook MCP">+</button>
+            <div v-for="service in mcpServices" :key="service.name" class="service">
+              <img :src="`/mcp-icons/${service.icon}`" :class="{ 'dark-icon': service.name === 'GitHub' }" alt=""  />
+              <strong>{{ service.name }}</strong><small>{{ service.category }}</small>
+              <button type="button" :aria-label="`Add ${service.name} MCP`">+</button>
             </div>
             <div class="service"><img src="https://cdn.simpleicons.org/notion/ffffff"
                 alt="" /><strong>Notion</strong><small>Knowledge</small><button type="button"
@@ -202,14 +212,7 @@ function closeMenu() {
               <FolderOpen :size="26" /><strong>File System</strong><small>Local files</small><button type="button"
                 aria-label="Add File System MCP">+</button>
             </div>
-            <div class="service">
-              <Search :size="26" /><strong>Tavily Search</strong><small>Web research</small><button type="button"
-                aria-label="Add Tavily Search MCP">+</button>
-            </div>
-            <div class="service"><img class="slack-logo"
-                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/slack.svg"
-                alt="" /><strong>Slack</strong><small>Messaging</small><button type="button"
-                aria-label="Add Slack MCP">+</button></div>
+
           </div>
           <div class="mcp-browser-foot mcp-setup-guide">
             <span>Powered by the official MCP Registry, Smithery, and Cyno’s curated selection.</span>

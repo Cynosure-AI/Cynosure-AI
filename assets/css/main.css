@@ -3086,8 +3086,10 @@ html {
 }
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
   padding: 8px;
+  background: #22282c;
 }
 .service {
   position: relative;
@@ -3097,15 +3099,8 @@ html {
   align-items: center;
   justify-content: center;
   gap: 7px;
-  border-right: 1px solid #22282c;
-  border-bottom: 1px solid #22282c;
+  background: #090c0e;
   transition: 0.2s;
-}
-.service:nth-child(3n) {
-  border-right: 0;
-}
-.service:nth-child(n + 7) {
-  border-bottom: 0;
 }
 .service:hover {
   background: #11161a;
@@ -3116,18 +3111,18 @@ html {
 }
 .service img,
 .service > span {
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
+}
+.service img.dark-icon {
+  filter: invert(1);
 }
 .service > span {
   display: grid;
   place-items: center;
   color: var(--accent);
   font-size: 23px;
-}
-.service img.slack-logo {
-  filter: invert(1);
 }
 .service strong {
   font-size: 10px;
@@ -3269,6 +3264,9 @@ html {
   .feature.large.mcp-feature,
   .feature.large.graph-feature {
     padding: 25px 18px;
+  }
+  .service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .service {
     min-height: 98px;
@@ -4019,13 +4017,20 @@ html {
 .site-header {
   position: fixed;
   top: 0;
-  left: 50%;
+  left: 0;
   width: 100%;
-  transform: translateX(-50%);
+  max-width: none;
+  margin: 0;
+  padding-inline: max(48px, calc((100vw - 1440px) / 2 + 48px));
   z-index: 60;
   background: rgba(7, 11, 15, 0.88);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+}
+@media (max-width: 1050px) {
+  .site-header {
+    padding-inline: 24px;
+  }
 }
 main {
   padding-top: 76px;
@@ -4093,7 +4098,11 @@ main {
   padding: 30px;
   border-right: 1px solid #252d33;
   border-bottom: 1px solid #252d33;
-  background: linear-gradient(145deg, rgba(20, 26, 31, 0.84), rgba(10, 14, 17, 0.92));
+  background: linear-gradient(
+    145deg,
+    rgba(20, 26, 31, 0.84),
+    rgba(10, 14, 17, 0.92)
+  );
   transition:
     background 0.2s ease,
     transform 0.2s ease;
