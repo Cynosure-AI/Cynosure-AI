@@ -165,26 +165,6 @@ function closeMenu() {
         <div class="intro-summary">
           <p>Cynosure is customizable from the first launch—including the default system prompt. Shape a personal AI
             harness around the way you work.</p>
-          <ul class="overview-list" aria-label="Included out of the box">
-            <li>
-              <Check :size="14" /> Durable, source-grounded memory
-            </li>
-            <li>
-              <Check :size="14" /> Browsable and custom MCP tools
-            </li>
-            <li>
-              <Check :size="14" /> Purpose-built agents and agent teams
-            </li>
-            <li>
-              <Check :size="14" /> Schedules and recurring automations
-            </li>
-            <li>
-              <Check :size="14" /> Telegram, Discord, and Slack channels
-            </li>
-            <li>
-              <Check :size="14" /> Local and remote model support
-            </li>
-          </ul>
         </div>
       </div>
 
