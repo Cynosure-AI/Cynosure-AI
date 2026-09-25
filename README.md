@@ -37,3 +37,7 @@ npm run dev
 ```bash
 npm run build
 ```
+
+### GitHub Pages
+
+The Pages workflow builds with Node 24 and publishes `.output/public`. In the repository's Pages settings, select **GitHub Actions** as the build and deployment source. The workflow uses `/<repository-name>/` as Nuxt's base path. If the site uses a custom domain at its root, set the repository Actions variable `NUXT_APP_BASE_URL` to `/`.

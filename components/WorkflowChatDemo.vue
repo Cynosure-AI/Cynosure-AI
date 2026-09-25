@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ArrowRight, Bot, Check, FileText, FolderOpen, Mail, RotateCcw, Search, Sparkles } from '@lucide/vue'
 
+const assetBase = useRuntimeConfig().app.baseURL
+
 type ToolKind = 'memory' | 'files' | 'mail' | 'web'
 
 const workflows: {
@@ -185,7 +187,7 @@ onBeforeUnmount(() => {
 <template>
   <div ref="root" class="workflow-demo" aria-label="Illustrated Cynosure task conversation">
     <div class="workflow-demo-top">
-      <div class="workflow-demo-identity"><span class="workflow-demo-logo"><img src="/logo.png" alt="" /></span><span><strong>Cynosure</strong><small>Working across your tools</small></span></div>
+      <div class="workflow-demo-identity"><span class="workflow-demo-logo"><img :src="`${assetBase}logo.png`" alt="" /></span><span><strong>Cynosure</strong><small>Working across your tools</small></span></div>
     </div>
 
     <div class="workflow-demo-tabs" aria-label="Example workflows">

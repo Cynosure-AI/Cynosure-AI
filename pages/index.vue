@@ -35,6 +35,7 @@ import {
 
 const downloadPlatforms = ['Windows', 'macOS', 'Linux'] as const
 type DownloadPlatform = typeof downloadPlatforms[number]
+const assetBase = useRuntimeConfig().app.baseURL
 
 const menuOpen = ref(false)
 const currentPlatform = ref<DownloadPlatform>('Windows')
@@ -63,7 +64,7 @@ useSeoMeta({
 useHead({
   htmlAttrs: { lang: 'en' },
   link: [
-    { rel: 'icon', href: '/logo.png' },
+    { rel: 'icon', href: `${assetBase}logo.png` },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
     {
@@ -102,7 +103,7 @@ function closeMenu() {
   <div class="grain" aria-hidden="true"></div>
   <header class="site-header" :class="{ open: menuOpen }">
     <a class="brand" href="#top" aria-label="Cynosure home">
-      <img src="/logo.png" alt="" />
+      <img :src="`${assetBase}logo.png`" alt="" />
       <span>CYNOSURE</span>
     </a>
     <nav aria-label="Main navigation">
@@ -173,14 +174,14 @@ function closeMenu() {
           <div class="mcp-actions"><a class="button primary" href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Explore MCP servers <ArrowUpRight :size="16" /></a><a class="button secondary" href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Learn more <ArrowUpRight :size="16" /></a></div>
         </div>
         <div class="mcp-showcase" aria-label="Illustration of the Cynosure MCP directory">
-          <div class="floating-service float-github"><img src="/mcp-icons/github-icon.svg" alt="" /></div>
-          <div class="floating-service float-slack"><img src="/mcp-icons/slack-icon.svg" alt="" /></div>
-          <div class="floating-service float-drive"><img src="/mcp-icons/google-drive-color-icon.svg" alt="" /></div>
+          <div class="floating-service float-github"><img :src="`${assetBase}mcp-icons/github-icon.svg`" alt="" /></div>
+          <div class="floating-service float-slack"><img :src="`${assetBase}mcp-icons/slack-icon.svg`" alt="" /></div>
+          <div class="floating-service float-drive"><img :src="`${assetBase}mcp-icons/google-drive-color-icon.svg`" alt="" /></div>
           <div class="mcp-browser">
-            <div class="mcp-browser-head"><span><img src="/logo.png" alt="" /> MCP STORE</span></div>
+            <div class="mcp-browser-head"><span><img :src="`${assetBase}logo.png`" alt="" /> MCP STORE</span></div>
             <div class="mcp-browser-body">
               <aside class="mcp-sidebar"><div class="mcp-search"><Search :size="13" /> Search MCP servers...</div><b>Recommended <small>12</small></b><span>Official <small>48</small></span><span>Smithery <small>312</small></span><em>INSTALLED</em><span>File System</span><span>Web &amp; Data</span><span>Development</span><span>System</span><span class="mcp-custom">＋ Add Custom Server</span></aside>
-              <div class="mcp-results"><div class="mcp-results-head"><div><strong>Recommended</strong><small>Handpicked MCP servers for everyday use.</small></div><span>Popular⌄</span></div><div class="mcp-result-grid"><div v-for="service in featuredServices" :key="service.name" class="mcp-result-card"><div class="mcp-result-title"><span class="mcp-result-icon"><img v-if="service.icon" :src="`/mcp-icons/${service.icon}`" alt="" /><FolderOpen v-else :size="25" /></span><div><strong>{{ service.name }}</strong><small>{{ service.description }}</small></div></div><div class="mcp-result-foot"><span>↧ {{ service.category }}</span><span class="install-label">Install</span></div></div></div></div>
+              <div class="mcp-results"><div class="mcp-results-head"><div><strong>Recommended</strong><small>Handpicked MCP servers for everyday use.</small></div><span>Popular⌄</span></div><div class="mcp-result-grid"><div v-for="service in featuredServices" :key="service.name" class="mcp-result-card"><div class="mcp-result-title"><span class="mcp-result-icon"><img v-if="service.icon" :src="`${assetBase}mcp-icons/${service.icon}`" alt="" /><FolderOpen v-else :size="25" /></span><div><strong>{{ service.name }}</strong><small>{{ service.description }}</small></div></div><div class="mcp-result-foot"><span>↧ {{ service.category }}</span><span class="install-label">Install</span></div></div></div></div>
             </div>
           </div>
         </div>
@@ -248,8 +249,8 @@ function closeMenu() {
       <div class="section-kicker light reveal">Beyond the desktop</div>
       <div class="workspace-heading reveal"><h2>Your AI, wherever<br /><em>you are.</em></h2><p>Keep the conversation going from your favorite chat app, and schedule work for Cynosure to handle at the right time.</p></div>
       <div class="remote-grid">
-        <article class="remote-card remote-chat reveal"><div class="remote-card-copy"><span class="feature-overline">REMOTE CHAT</span><h3>Message Cynosure from anywhere.</h3><p>Talk to your AI through Telegram, Discord, or Slack. Ask questions and continue conversations when you’re away from the workspace.</p><div class="remote-platforms"><span><Send :size="19" /> Telegram</span><span><img src="/mcp-icons/discord-color-icon.svg" alt="" /> Discord</span><span><img src="/mcp-icons/slack-icon.svg" alt="" /> Slack</span></div></div><div class="remote-chat-preview" aria-hidden="true"><div class="preview-head"><span class="preview-avatar"><img src="/logo.png" alt="" /></span><div><strong>Cynosure</strong><small>Always ready to help</small></div><span class="online-dot"></span></div><div class="preview-messages"><div class="preview-message outgoing">Can you summarize the latest project notes?</div><div class="preview-message incoming">Of course. Here are the three updates that matter most today…</div></div><div class="preview-input">Message Cynosure <Send :size="14" /></div></div></article>
-        <article class="remote-card remote-schedule reveal"><div class="remote-card-copy"><span class="feature-overline">SCHEDULES</span><h3>Put recurring work on the calendar.</h3><p>Schedule an agent to run a daily brief, weekly review, or any task you want done on a regular cadence.</p><div class="schedule-example"><CalendarClock :size="20" /><span><strong>Morning brief</strong><small>Every weekday · 08:30</small></span><CircleCheck :size="18" /></div></div><figure class="remote-schedule-shot"><img src="/screenshots/schedule.png" alt="Cynosure schedule screen showing recurring jobs and their status" loading="lazy" /></figure></article>
+        <article class="remote-card remote-chat reveal"><div class="remote-card-copy"><span class="feature-overline">REMOTE CHAT</span><h3>Message Cynosure from anywhere.</h3><p>Talk to your AI through Telegram, Discord, or Slack. Ask questions and continue conversations when you’re away from the workspace.</p><div class="remote-platforms"><span><Send :size="19" /> Telegram</span><span><img :src="`${assetBase}mcp-icons/discord-color-icon.svg`" alt="" /> Discord</span><span><img :src="`${assetBase}mcp-icons/slack-icon.svg`" alt="" /> Slack</span></div></div><div class="remote-chat-preview" aria-hidden="true"><div class="preview-head"><span class="preview-avatar"><img :src="`${assetBase}logo.png`" alt="" /></span><div><strong>Cynosure</strong><small>Always ready to help</small></div><span class="online-dot"></span></div><div class="preview-messages"><div class="preview-message outgoing">Can you summarize the latest project notes?</div><div class="preview-message incoming">Of course. Here are the three updates that matter most today…</div></div><div class="preview-input">Message Cynosure <Send :size="14" /></div></div></article>
+        <article class="remote-card remote-schedule reveal"><div class="remote-card-copy"><span class="feature-overline">SCHEDULES</span><h3>Put recurring work on the calendar.</h3><p>Schedule an agent to run a daily brief, weekly review, or any task you want done on a regular cadence.</p><div class="schedule-example"><CalendarClock :size="20" /><span><strong>Morning brief</strong><small>Every weekday · 08:30</small></span><CircleCheck :size="18" /></div></div><figure class="remote-schedule-shot"><img :src="`${assetBase}screenshots/schedule.png`" alt="Cynosure schedule screen showing recurring jobs and their status" loading="lazy" /></figure></article>
       </div>
     </section>
 
@@ -337,7 +338,7 @@ function closeMenu() {
     </section>
   </main>
 
-  <footer><a class="brand" href="#top"><img src="/logo.png" alt="" /><span>CYNOSURE</span></a>
+  <footer><a class="brand" href="#top"><img :src="`${assetBase}logo.png`" alt="" /><span>CYNOSURE</span></a>
     <p>© 2026 Cynosure. Free to use</p>
     <div><a href="https://github.com/andreasjhagen/Cynosure#readme">Documentation</a><a
         href="https://github.com/andreasjhagen/Cynosure/releases">Releases</a><a

@@ -676,7 +676,7 @@ html {
   padding: 115px max(6%, calc((100vw - 1410px) / 2));
   background:
     linear-gradient(#0c101280, #0c1012a8),
-    url("/bg_planet_horizon.png") center bottom / cover no-repeat #0c1012;
+    url("../images/bg_planet_horizon.png") center bottom / cover no-repeat #0c1012;
   border-top: 1px solid #38282a;
 }
 .cta-inner {
@@ -1030,7 +1030,7 @@ main {
   gap: clamp(32px, 4vw, 68px);
   background:
     linear-gradient(90deg, #0c1215 0%, #0c1215d9 24%, #0c121525 70%),
-    url("/bg_hero_section.png") center bottom / cover no-repeat;
+    url("../images/bg_hero_section.png") center bottom / cover no-repeat;
   overflow: hidden;
 }
 .hero:before {
