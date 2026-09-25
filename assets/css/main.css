@@ -635,7 +635,7 @@ html {
 .memory-section {
   position: relative;
   color: var(--ink);
-  border-top: 1px solid #20282e;
+  border-top: 1px solid #5b2c30;
   overflow: hidden;
 }
 .memory-section:before {
@@ -688,25 +688,38 @@ html {
 }
 
 .personalize {
-  background-color: #090d10;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #101013;
   background-image:
-    radial-gradient(
-      circle at 15% 52%,
-      rgba(255, 78, 69, 0.085),
-      transparent 29%
-    ),
-    radial-gradient(circle at 86% 18%, rgba(35, 75, 101, 0.08), transparent 26%);
+    radial-gradient(ellipse at 20% 8%, #70282c80, transparent 48%),
+    radial-gradient(ellipse at 90% 92%, #78252a45, transparent 43%),
+    linear-gradient(125deg, #1d1216 0%, #111215 50%, #1b1115 100%);
   color: var(--ink);
-  border-top: 1px solid #20282e;
+  border-top: 1px solid #6c3538;
+}
+.personalize:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(66vw, 940px);
+  aspect-ratio: 1;
+  top: -48%;
+  left: -18%;
+  border: 1px solid #b64b4b3d;
+  border-radius: 50%;
+  box-shadow: 0 0 0 90px #b64b4b0a, 0 0 0 190px #b64b4b07;
+  pointer-events: none;
 }
 .personalize .section-kicker {
-  color: #77838c;
+  color: #d3a7a6;
 }
 .personalize .section-kicker span {
   border-color: #303940;
 }
 .personalize .personal-copy p {
-  color: #8b969e;
+  color: #c0b6b8;
 }
 .personalize .personal-copy li {
   display: flex;
@@ -1042,37 +1055,39 @@ html {
 .personal-feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid #252d33;
-  border-left: 1px solid #252d33;
+  gap: 14px;
 }
 .personal-feature-grid article {
   min-height: 230px;
   padding: 30px;
-  border-right: 1px solid #252d33;
-  border-bottom: 1px solid #252d33;
-  background: linear-gradient(
-    145deg,
-    rgba(20, 26, 31, 0.84),
-    rgba(10, 14, 17, 0.92)
-  );
+  border: 1px solid #624044;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #2c1d21e8, #171619f2 73%);
+  box-shadow: 0 18px 45px #0003;
   transition:
-    background 0.2s ease,
+    border-color 0.2s ease,
     transform 0.2s ease;
 }
 .personal-feature-grid article:hover {
   z-index: 1;
-  background: #151b20;
+  border-color: #bb5958;
   transform: translateY(-2px);
 }
 .personal-feature-grid svg {
-  margin-bottom: 30px;
-  color: var(--accent);
+  width: 44px;
+  height: 44px;
+  margin-bottom: 23px;
+  padding: 10px;
+  border: 1px solid #754346;
+  border-radius: 9px;
+  color: #ff7770;
+  background: #51272b;
 }
 .personal-feature-grid article > span {
   display: block;
   margin-bottom: 10px;
-  color: #5f6a72;
-  font: 7px var(--mono);
+  color: #d39695;
+  font: 9px var(--mono);
   letter-spacing: 0.14em;
 }
 .personal-feature-grid h3 {
@@ -1082,7 +1097,7 @@ html {
 }
 .personal-feature-grid p {
   margin: 0;
-  color: #78838b;
+  color: #b5adb0;
   font-size: 12px;
   line-height: 1.65;
 }
@@ -2220,12 +2235,11 @@ main {
 /* Connected memory */
 .memory-section {
   padding: 100px max(6%, calc((100vw - 1410px) / 2)) 110px;
-  background-color: #0c1114;
+  background-color: #1b1114;
   background-image:
-    radial-gradient(circle at 77% 46%, rgba(120, 39, 41, .15), transparent 38%),
-    linear-gradient(#ffffff05 1px, transparent 1px),
-    linear-gradient(90deg, #ffffff05 1px, transparent 1px);
-  background-size: auto, 100px 100px, 100px 100px;
+    radial-gradient(ellipse at 82% 26%, #60282f85, transparent 44%),
+    radial-gradient(ellipse at 4% 83%, #46212770, transparent 40%),
+    linear-gradient(135deg, #211317, #130f12 75%);
 }
 .memory-section .section-kicker { color: #b6bec6; }
 .memory-heading {
