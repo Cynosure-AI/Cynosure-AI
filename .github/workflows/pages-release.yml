@@ -38,7 +38,7 @@ jobs:
         run: npm ci
       - name: Static HTML export with Nuxt
         env:
-          NUXT_APP_BASE_URL: ${{ vars.NUXT_APP_BASE_URL || format('/{0}/', github.event.repository.name) }}
+          NUXT_APP_BASE_URL: ${{ vars.NUXT_APP_BASE_URL || (github.event.repository.name == format('{0}.github.io', github.repository_owner) && '/' || format('/{0}/', github.event.repository.name)) }}
         run: npm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

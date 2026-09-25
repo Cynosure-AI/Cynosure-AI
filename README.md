@@ -40,4 +40,4 @@ npm run build
 
 ### GitHub Pages
 
-The Pages workflow builds with Node 24 and publishes `.output/public`. In the repository's Pages settings, select **GitHub Actions** as the build and deployment source. The workflow uses `/<repository-name>/` as Nuxt's base path. If the site uses a custom domain at its root, set the repository Actions variable `NUXT_APP_BASE_URL` to `/`.
+The Pages workflow builds with Node 24 and publishes `.output/public`. In the repository's Pages settings, select **GitHub Actions** as the build and deployment source. GitHub Pages serves this repository at `https://cynosure-ai.github.io/Cynosure-AI/`. To serve the organization root at `https://cynosure-ai.github.io/`, rename the repository to `cynosure-ai.github.io`; the workflow will then use `/` as Nuxt's base path automatically. For a custom domain at its root, set the repository Actions variable `NUXT_APP_BASE_URL` to `/`.
