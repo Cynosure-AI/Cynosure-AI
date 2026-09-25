@@ -22,7 +22,6 @@ import {
   FileText,
   FolderOpen,
   ListFilter,
-  Mail,
   Menu,
   Mic2,
   Network,
@@ -108,7 +107,7 @@ function closeMenu() {
     </a>
     <nav aria-label="Main navigation">
       <a href="#features" @click="closeMenu">Capabilities</a>
-      <a href="#workflows" @click="closeMenu">Use Cases</a>
+      <a href="#workspace" @click="closeMenu">Use Cases</a>
       <a href="#download" @click="closeMenu">Pricing</a>
       <a href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Documentation
         <span>↗</span></a>
@@ -128,7 +127,7 @@ function closeMenu() {
       <div class="hero-copy reveal">
         <div class="eyebrow"><span></span> The AI workspace that remembers</div>
         <h1>Your models.<br />Your tools. <br/><em>Your AI.</em></h1>
-        <p class="hero-lede">Cynosure is the AI workspace for models, tools, memory, agents, artifacts, and automations — all in one place. Bring your own models or use a provider API, then add the tools and memory your workflows need.</p>
+        <p class="hero-lede">Ask Cynosure to research ideas, recall project details, draft follow-ups, and organize files. Your models, tools, memory, agents, and automations work together in one place.</p>
         <div class="hero-actions">
           <a class="button primary" href="https://github.com/andreasjhagen/Cynosure/releases/latest"><span>Download
               for {{ currentPlatform }}</span>
@@ -146,29 +145,7 @@ function closeMenu() {
         </div>
       </div>
 
-      <figure class="hero-visual reveal delay-1">
-        <div class="hero-app" aria-label="Preview of Cynosure's chat workspace">
-          <div class="hero-app-top"><div class="traffic"><i></i><i></i><i></i></div></div>
-          <div class="hero-app-body">
-            <aside class="hero-app-sidebar">
-              <div class="hero-app-brand"><img src="/logo.png" alt="" /> CYNOSURE</div>
-              <div class="hero-app-item active"><MessageCircle :size="12" /> Chat</div>
-              <div class="hero-app-item"><Box :size="12" /> Models</div>
-              <div class="hero-app-item"><Settings2 :size="12" /> Tools</div>
-              <div class="hero-app-item"><Bot :size="12" /> Agents</div>
-              <div class="hero-app-item"><FolderOpen :size="12" /> Artifacts</div>
-              <div class="hero-app-item"><Database :size="12" /> Memory</div>
-              <div class="hero-app-recent">RECENT CHATS</div>
-              <div v-for="chat in ['Build a research agent', 'Analyze dataset trends', 'Create marketing assets', 'Summarize user feedback']" :key="chat" class="hero-app-chat"><span>✦</span>{{ chat }}</div>
-            </aside>
-            <div class="hero-app-main">
-              <div class="hero-app-toolbar"><span><MessageCircle :size="12" /> Chat</span><span class="hero-app-new"><Plus :size="12" /> New Chat</span></div>
-              <div class="hero-app-center"><div class="hero-app-bot"><Bot :size="28" /></div><strong>WHAT'S ON YOUR MIND?</strong><p>Chat with your models, use your tools, access your memory,<br />create agents, and automate your workflows.</p></div>
-              <div class="hero-app-composer"><span>Type a message or add tools...</span><div><span><Search :size="12" /> Search</span><span><Settings2 :size="12" /> Tools</span><span><Database :size="12" /> Memory</span><span><Bot :size="12" /> Agents</span><b>Cynosure Intelligence⌄</b><Send :size="12" /></div></div>
-            </div>
-          </div>
-        </div>
-      </figure>
+      <div class="hero-visual reveal delay-1"><WorkflowChatDemo /></div>
     </section>
     
     <section class="overview-band" id="features">
@@ -176,22 +153,6 @@ function closeMenu() {
       <a class="overview-card" href="#features-detail"><span class="overview-icon"><Box :size="26" /></span><div><h3>Models</h3><p>Use your own models or connect any provider API. Switch, compare, and customize for your workflow.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
       <a class="overview-card" href="#memory"><span class="overview-icon"><Database :size="26" /></span><div><h3>Memory</h3><p>Give your AI a long-term memory. Reference past work, build context, and keep knowledge at hand.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
       <a class="overview-card" href="#workspace"><span class="overview-icon"><Sparkles :size="26" /></span><div><h3>Agents &amp; Tools</h3><p>Add tools, create agents, and automate repetitive work. Turn ideas into powerful workflows.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
-    </section>
-
-    <section class="workflow-section" id="workflows">
-      <div class="workflow-section-inner">
-        <div class="workflow-copy reveal">
-          <div class="section-kicker">From request to result</div>
-          <h2>Less busywork.<br /><em>More done.</em></h2>
-          <p class="workflow-lede">Ask Cynosure to take a task from start to finish. It can find the context, work across your connected tools, and bring back something useful—ready for you to review.</p>
-          <div class="workflow-use-cases">
-            <div><span><Mail :size="19" /></span><p><strong>Write with context</strong><small>Draft emails and follow-ups informed by your projects and contacts.</small></p></div>
-            <div><span><Search :size="19" /></span><p><strong>Research and recall</strong><small>Find the right notes, files, decisions, and remembered details.</small></p></div>
-            <div><span><FolderOpen :size="19" /></span><p><strong>Organize and automate</strong><small>Sort files, prepare briefs, and hand off repeatable workflows.</small></p></div>
-          </div>
-        </div>
-        <div class="workflow-stage reveal delay-1"><WorkflowChatDemo /></div>
-      </div>
     </section>
 
 

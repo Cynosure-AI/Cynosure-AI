@@ -235,25 +235,6 @@ h2 em {
 .hero-visual {
   position: relative;
 }
-.traffic {
-  display: flex;
-  gap: 5px;
-}
-.traffic i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #394048;
-}
-.traffic i:first-child {
-  background: #d6544c;
-}
-.traffic i:nth-child(2) {
-  background: #d4a74e;
-}
-.traffic i:nth-child(3) {
-  background: #4ba767;
-}
 .intro,
 .personalize {
   padding: 125px max(48px, calc((100vw - 1344px) / 2));
@@ -489,22 +470,10 @@ footer > div {
     transition: none;
   }
 }
-.hero-visual figcaption {
-  position: relative;
-  z-index: 3;
-  margin: 15px 0 0 8px;
-  color: #65717b;
-  font: 9px var(--mono);
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
 @media (max-width: 720px) {
   .hero-visual {
     transform: none;
     height: auto;
-  }
-  .hero-visual figcaption {
-    display: none;
   }
 }
 .hero {
@@ -1045,8 +1014,8 @@ main {
   min-height: max(745px, 75vh);
   padding: 140px max(6%, calc((100vw - 1410px) / 2)) 72px;
   display: grid;
-  grid-template-columns: minmax(420px, 42%) minmax(0, 58%);
-  gap: 28px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 4vw, 68px);
   background:
     linear-gradient(90deg, #0c1215 0%, #0c1215d9 24%, #0c121525 70%),
     url("/bg_hero_section.png") center bottom / cover no-repeat;
@@ -1145,264 +1114,7 @@ main {
 .hero-visual.reveal.visible {
   transform: perspective(1600px) rotateY(-4deg) rotateX(1deg) rotateZ(-1deg);
 }
-/* CSS product preview inside the hero */
-.hero-app {
-  width: min(100%, 835px);
-  height: 475px;
-  border: 1px solid #d5534d;
-  border-radius: 18px;
-  padding: 9px;
-  background: #101317;
-  box-shadow:
-    0 0 0 5px #111519a8,
-    0 28px 80px #000b,
-    0 0 65px #ff3b3440;
-  font-family: var(--display);
-}
-.hero-app-top {
-  height: 20px;
-  display: flex;
-  align-items: flex-start;
-  padding-left: 7px;
-}
-.hero-app .traffic i {
-  width: 8px;
-  height: 8px;
-}
-.hero-app-body {
-  display: grid;
-  grid-template-columns: 152px 1fr;
-  height: calc(100% - 20px);
-  border: 1px solid #30363a;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #15191d;
-}
-.hero-app-sidebar {
-  padding: 11px 9px;
-  border-right: 1px solid #30363a;
-  background: #101417;
-}
-.hero-app-brand {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 14px;
-  font: 700 9px var(--mono);
-  letter-spacing: 0.18em;
-  color: #fff;
-}
-.hero-app-brand img {
-  width: 18px;
-  height: 18px;
-}
-.hero-app-item {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  padding: 7px 8px;
-  color: #adb6be;
-  font-size: 10px;
-}
-.hero-app-item.active {
-  color: #fff;
-  background: #3c2525;
-  border-right: 1px solid var(--accent);
-}
-.hero-app-recent {
-  border-top: 1px solid #30353a;
-  margin: 15px 0 7px;
-  padding-top: 10px;
-  color: #89939b;
-  font: 8px var(--mono);
-  letter-spacing: 0.07em;
-}
-.hero-app-chat {
-  display: flex;
-  gap: 7px;
-  padding: 6px 4px;
-  color: #aeb7bd;
-  font-size: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.hero-app-chat span {
-  color: #ff6c68;
-}
-.hero-app-main {
-  position: relative;
-  background: radial-gradient(circle at 50% 45%, #1d2227, #15191d 68%);
-}
-.hero-app-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 35px;
-  border-bottom: 1px solid #30363a;
-  padding: 0 13px;
-  color: #d8e0e5;
-  font-size: 10px;
-}
-.hero-app-toolbar > span {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.hero-app-new {
-  color: #ff8178;
-  border: 1px solid #e2554b;
-  border-radius: 4px;
-  padding: 4px 7px;
-}
-.hero-app-center {
-  position: absolute;
-  top: 20%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-}
-.hero-app-bot {
-  display: grid;
-  place-items: center;
-  width: 50px;
-  height: 50px;
-  margin: 0 auto 16px;
-  color: var(--accent);
-  background: #3b2828;
-  border: 1px solid #5d3333;
-  border-radius: 9px;
-}
-.hero-app-center strong {
-  font: 600 16px var(--mono);
-  letter-spacing: 0.02em;
-}
-.hero-app-center p {
-  color: #a3acb3;
-  font-size: 10px;
-  line-height: 1.5;
-}
-.hero-app-composer {
-  position: absolute;
-  left: 4%;
-  right: 4%;
-  bottom: 15%;
-  height: 75px;
-  padding: 10px;
-  border: 1px solid #333b41;
-  border-radius: 7px;
-  background: #23272d;
-  color: #89949d;
-  font-size: 10px;
-}
-.hero-app-composer > div {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 18px;
-  font-size: 8px;
-}
-.hero-app-composer > div span {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.hero-app-composer b {
-  margin-left: auto;
-  padding: 6px 8px;
-  border: 1px solid #41494e;
-  border-radius: 4px;
-  color: #d4dadd;
-  font-weight: 400;
-  white-space: nowrap;
-}
-.hero-app-composer > div > svg {
-  color: #e6ebee;
-}
-/* Workflow conversation */
-.workflow-section {
-  position: relative;
-  padding: 108px max(6%, calc((100vw - 1410px) / 2)) 112px;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 79% 42%, #6d292747, transparent 45%),
-    radial-gradient(ellipse at 12% 90%, #1830396b, transparent 40%),
-    #0d1317;
-  border-top: 1px solid #293137;
-}
-.workflow-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.45;
-  background-image: linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px);
-  background-size: 78px 78px;
-  mask-image: linear-gradient(90deg, transparent, #000 45%, #000);
-}
-.workflow-section-inner {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-  align-items: center;
-  gap: clamp(50px, 7vw, 112px);
-  max-width: 1410px;
-  margin: auto;
-}
-.workflow-copy h2 {
-  margin: 27px 0 23px;
-  font-size: clamp(52px, 5.3vw, 78px);
-  line-height: 1.01;
-}
-.workflow-lede {
-  max-width: 510px;
-  margin: 0;
-  color: #b7c1c8;
-  font-size: 17px;
-  line-height: 1.75;
-}
-.workflow-use-cases {
-  display: grid;
-  gap: 23px;
-  margin-top: 42px;
-}
-.workflow-use-cases > div {
-  display: flex;
-  align-items: flex-start;
-  gap: 17px;
-}
-.workflow-use-cases > div > span {
-  flex: 0 0 42px;
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  color: #ff746d;
-  background: #342223;
-  border: 1px solid #5a3332;
-  border-radius: 9px;
-}
-.workflow-use-cases p {
-  margin: 1px 0 0;
-}
-.workflow-use-cases strong,
-.workflow-use-cases small {
-  display: block;
-}
-.workflow-use-cases strong {
-  color: #f2f4f5;
-  font-size: 15px;
-  font-weight: 700;
-}
-.workflow-use-cases small {
-  max-width: 420px;
-  margin-top: 5px;
-  color: #929fa8;
-  font-size: 13px;
-  line-height: 1.55;
-}
-.workflow-stage {
-  min-width: 0;
-}
+/* Animated conversation in the hero */
 .workflow-demo {
   width: 100%;
   min-height: 602px;
@@ -1411,7 +1123,10 @@ main {
   background: #141a1e;
   border: 1px solid #465052;
   border-radius: 16px;
-  box-shadow: 0 28px 80px #0008, 0 0 0 7px #ffffff08, 0 0 70px #ff494521;
+  box-shadow:
+    0 28px 80px #0008,
+    0 0 0 7px #ffffff08,
+    0 0 70px #ff494521;
 }
 .workflow-demo-top {
   display: flex;
@@ -1465,7 +1180,9 @@ main {
   color: #aab7bd;
   cursor: pointer;
   font: 10px var(--mono);
-  transition: color 0.2s, border-color 0.2s;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
 }
 .workflow-replay:hover,
 .workflow-replay:focus-visible {
@@ -1489,7 +1206,10 @@ main {
   cursor: pointer;
   font: 10px var(--mono);
   white-space: nowrap;
-  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s;
 }
 .workflow-demo-tabs button:hover,
 .workflow-demo-tabs button:focus-visible {
@@ -1594,7 +1314,9 @@ main {
   animation: workflow-cursor-blink 0.8s steps(1) infinite;
 }
 @keyframes workflow-cursor-blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 .workflow-tool-list {
   display: grid;
@@ -1615,8 +1337,14 @@ main {
   animation: workflow-rise 0.35s ease both;
 }
 @keyframes workflow-rise {
-  from { opacity: 0; transform: translateY(7px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .workflow-tool-icon {
   display: grid;
@@ -2304,22 +2032,8 @@ main {
   width: 100%;
 }
 @media (max-width: 1100px) {
-  .workflow-section-inner {
-    gap: 42px;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  }
-  .workflow-section {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .workflow-copy h2 {
-    font-size: clamp(48px, 5.2vw, 66px);
-  }
-  .workflow-lede {
-    font-size: 15px;
-  }
   .hero {
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding-left: 5%;
     padding-right: 5%;
   }
@@ -2330,8 +2044,9 @@ main {
     gap: 15px;
     flex-wrap: wrap;
   }
-  .hero-app {
-    height: 420px;
+  .hero-visual {
+    max-width: 760px;
+    margin: 45px auto 0;
   }
   .overview-band {
     grid-template-columns: repeat(3, 1fr);
@@ -2350,20 +2065,6 @@ main {
   }
 }
 @media (max-width: 720px) {
-  .workflow-section {
-    padding: 76px 20px 85px;
-  }
-  .workflow-section-inner {
-    grid-template-columns: 1fr;
-    gap: 46px;
-  }
-  .workflow-copy h2 {
-    font-size: clamp(49px, 11vw, 68px);
-  }
-  .workflow-use-cases {
-    gap: 20px;
-    margin-top: 33px;
-  }
   .workflow-demo {
     min-height: 0;
   }
@@ -2443,16 +2144,12 @@ main {
     min-width: 135px;
   }
   .hero-visual {
-    width: 690px;
-    max-width: none;
-    transform-origin: top left;
-    margin: 0 0 -115px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
   .hero-visual.reveal.visible {
-    transform: scale(0.72);
-  }
-  .hero-app {
-    height: 390px;
+    transform: none;
   }
   .overview-band {
     grid-template-columns: 1fr;
@@ -2525,12 +2222,6 @@ main {
   }
 }
 @media (max-width: 390px) {
-  .hero-visual {
-    margin-bottom: -195px;
-  }
-  .hero-visual.reveal.visible {
-    transform: scale(0.5);
-  }
   .mcp-showcase {
     transform: scale(0.43);
     margin-bottom: -220px;
@@ -2539,23 +2230,6 @@ main {
     padding: 20px;
   }
 }
-@media (min-width: 391px) and (max-width: 450px) {
-  .hero-visual {
-    margin-bottom: -165px;
-  }
-  .hero-visual.reveal.visible {
-    transform: scale(0.56);
-  }
-}
-@media (min-width: 451px) and (max-width: 550px) {
-  .hero-visual {
-    margin-bottom: -130px;
-  }
-  .hero-visual.reveal.visible {
-    transform: scale(0.66);
-  }
-}
-
 /* Connected memory */
 .memory-section {
   padding: 100px max(6%, calc((100vw - 1410px) / 2)) 110px;
