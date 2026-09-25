@@ -22,6 +22,7 @@ import {
   FileText,
   FolderOpen,
   ListFilter,
+  Mail,
   Menu,
   Mic2,
   Network,
@@ -107,7 +108,7 @@ function closeMenu() {
     </a>
     <nav aria-label="Main navigation">
       <a href="#features" @click="closeMenu">Capabilities</a>
-      <a href="#workspace" @click="closeMenu">Use Cases</a>
+      <a href="#workflows" @click="closeMenu">Use Cases</a>
       <a href="#download" @click="closeMenu">Pricing</a>
       <a href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Documentation
         <span>↗</span></a>
@@ -169,13 +170,31 @@ function closeMenu() {
         </div>
       </figure>
     </section>
-
+    
     <section class="overview-band" id="features">
       <div class="overview-title"><div class="section-kicker">A complete AI workspace</div><h2>Everything you need<br />to go further.</h2></div>
       <a class="overview-card" href="#features-detail"><span class="overview-icon"><Box :size="26" /></span><div><h3>Models</h3><p>Use your own models or connect any provider API. Switch, compare, and customize for your workflow.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
       <a class="overview-card" href="#memory"><span class="overview-icon"><Database :size="26" /></span><div><h3>Memory</h3><p>Give your AI a long-term memory. Reference past work, build context, and keep knowledge at hand.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
       <a class="overview-card" href="#workspace"><span class="overview-icon"><Sparkles :size="26" /></span><div><h3>Agents &amp; Tools</h3><p>Add tools, create agents, and automate repetitive work. Turn ideas into powerful workflows.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
     </section>
+
+    <section class="workflow-section" id="workflows">
+      <div class="workflow-section-inner">
+        <div class="workflow-copy reveal">
+          <div class="section-kicker">From request to result</div>
+          <h2>Less busywork.<br /><em>More done.</em></h2>
+          <p class="workflow-lede">Ask Cynosure to take a task from start to finish. It can find the context, work across your connected tools, and bring back something useful—ready for you to review.</p>
+          <div class="workflow-use-cases">
+            <div><span><Mail :size="19" /></span><p><strong>Write with context</strong><small>Draft emails and follow-ups informed by your projects and contacts.</small></p></div>
+            <div><span><Search :size="19" /></span><p><strong>Research and recall</strong><small>Find the right notes, files, decisions, and remembered details.</small></p></div>
+            <div><span><FolderOpen :size="19" /></span><p><strong>Organize and automate</strong><small>Sort files, prepare briefs, and hand off repeatable workflows.</small></p></div>
+          </div>
+        </div>
+        <div class="workflow-stage reveal delay-1"><WorkflowChatDemo /></div>
+      </div>
+    </section>
+
+
 
 
 
