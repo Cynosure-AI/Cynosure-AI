@@ -159,7 +159,7 @@ function closeMenu() {
 
 
     <section class="intro product-overview" id="features">
-      <div class="section-kicker reveal"><span>01</span> Your stack, your way</div>
+      <div class="section-kicker reveal">Your stack, your way</div>
       <div class="intro-heading reveal">
         <h2>Start minimal.<br /><em>Add what matters.</em></h2>
         <div class="intro-summary">
@@ -202,7 +202,7 @@ function closeMenu() {
     </section>
 
     <section class="memory-section" id="memory">
-      <div class="section-kicker reveal"><span>02</span> Memory, connected</div>
+      <div class="section-kicker reveal">Memory, connected</div>
       <div class="memory-heading reveal">
         <h2>Always the right context.<br /><em>Always up to date.</em></h2>
         <p>Memory in Cynosure is file-based and continuously updated in the background to ensure it learns from failure,
@@ -277,7 +277,7 @@ function closeMenu() {
 
     <section class="workspace" id="workspace">
       <div class="workspace-bg"></div>
-      <div class="section-kicker light reveal"><span>03</span> Work beyond the window</div>
+      <div class="section-kicker light reveal">Work beyond the window</div>
       <div class="workspace-heading reveal">
         <h2>Your agents don’t<br />clock out when <em>you do.</em></h2>
         <p>Create agents for distinct roles, then reuse them as sub-agents inside other agents. Each specialist handles
@@ -321,7 +321,7 @@ function closeMenu() {
     </section>
 
     <section class="personalize">
-      <div class="section-kicker reveal"><span>04</span> Your workspace. Your way.</div>
+      <div class="section-kicker reveal">Your workspace. Your way.</div>
       <div class="personal-heading reveal">
         <div class="personal-copy">
           <h2>Make it <em>yours.</em></h2>
