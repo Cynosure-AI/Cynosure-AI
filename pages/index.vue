@@ -109,7 +109,7 @@ function closeMenu() {
     <nav aria-label="Main navigation">
       <a href="#features" @click="closeMenu">Capabilities</a>
       <a href="#use-cases" @click="closeMenu">Use Cases</a>
-      <a href="#download" @click="closeMenu">Pricing</a>
+      <a href="#download" @click="closeMenu">Download</a>
       <a href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Documentation
         <span>↗</span></a>
     </nav>

@@ -27,6 +27,11 @@ for (const file of [...sourceFiles(path.join(root, 'pages')), ...sourceFiles(pat
     for (const [, name] of expression.matchAll(/([\w-]+)\s*:/g)) usedClasses.add(name)
   }
   for (const [, , name] of source.matchAll(/classList\.(?:add|remove|toggle)\((["'])([^"']+)\1/g)) usedClasses.add(name)
+  for (const [, name] of source.matchAll(/<Transition\b[^>]*\bname="([\w-]+)"/g)) {
+    for (const state of ['enter-active', 'enter-from', 'enter-to', 'leave-active', 'leave-from', 'leave-to']) {
+      usedClasses.add(`${name}-${state}`)
+    }
+  }
 }
 
 const css = postcss.parse(fs.readFileSync(stylesheet, 'utf8'), { from: stylesheet })

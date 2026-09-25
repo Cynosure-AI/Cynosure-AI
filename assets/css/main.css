@@ -1217,6 +1217,24 @@ main {
   min-height: 450px;
   padding: 21px 23px 19px;
 }
+.workflow-demo-content {
+  transition: opacity 0.23s ease, transform 0.23s ease;
+}
+.workflow-demo-content.switching {
+  opacity: 0;
+  transform: translateY(-7px);
+}
+.workflow-section {
+  overflow: hidden;
+}
+.workflow-section-enter-active,
+.workflow-section-leave-active {
+  transition: height 0.32s ease, opacity 0.24s ease;
+}
+.workflow-section-enter-from,
+.workflow-section-leave-to {
+  opacity: 0;
+}
 .workflow-demo-caption {
   display: flex;
   align-items: center;
@@ -1449,6 +1467,11 @@ main {
   .workflow-tool,
   .workflow-output {
     animation: none;
+  }
+  .workflow-demo-content,
+  .workflow-section-enter-active,
+  .workflow-section-leave-active {
+    transition: none;
   }
 }
 /* Capability cards */
