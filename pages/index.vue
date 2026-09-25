@@ -110,10 +110,10 @@ function closeMenu() {
       <a href="#features" @click="closeMenu">Capabilities</a>
       <a href="#use-cases" @click="closeMenu">Use Cases</a>
       <a href="#download" @click="closeMenu">Download</a>
-      <a href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Documentation
+      <a href="https://cynosure-ai.github.io/docs/" target="_blank" rel="noreferrer">Documentation
         <span>↗</span></a>
     </nav>
-    <a class="nav-cta" href="https://github.com/andreasjhagen/Cynosure/releases/latest">Download
+    <a class="nav-cta" href="https://github.com/Cynosure-AI/cynosure-ai.github.io/releases">Download
       <ArrowDown :size="14" />
     </a>
     <button class="menu-button" type="button" aria-label="Toggle navigation" :aria-expanded="menuOpen"
@@ -130,11 +130,11 @@ function closeMenu() {
         <h1>Your models.<br />Your tools. <br/><em>Your AI.</em></h1>
         <p class="hero-lede">Ask Cynosure to research ideas, recall project details, draft follow-ups, and organize files. Your models, tools, memory, agents, and automations work together in one place.</p>
         <div class="hero-actions">
-          <a class="button primary" href="https://github.com/andreasjhagen/Cynosure/releases/latest"><span>Download
+          <a class="button primary" href="https://github.com/Cynosure-AI/cynosure-ai.github.io/releases"><span>Download
               for {{ currentPlatform }}</span>
             <ArrowDown :size="17" />
           </a>
-          <a class="button secondary" href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank"
+          <a class="button secondary" href="https://cynosure-ai.github.io/docs/" target="_blank"
             rel="noreferrer">Read the docs
             <ArrowUpRight :size="14" />
           </a>
@@ -171,7 +171,7 @@ function closeMenu() {
           <div><span><Plus :size="28" /></span><p><strong>Install</strong>Add MCP servers with one click.</p></div>
           <div><span><Settings2 :size="28" /></span><p><strong>Configure</strong>Set API keys and permissions.</p></div>
           <div><span><Box :size="28" /></span><p><strong>Use instantly</strong>Tools are available in chat right away.</p></div>
-          <div class="mcp-actions"><a class="button primary" href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Explore MCP servers <ArrowUpRight :size="16" /></a><a class="button secondary" href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Learn more <ArrowUpRight :size="16" /></a></div>
+          <div class="mcp-actions"><a class="button primary" href="https://cynosure-ai.github.io/docs/" target="_blank" rel="noreferrer">Explore MCP servers <ArrowUpRight :size="16" /></a><a class="button secondary" href="https://cynosure-ai.github.io/docs/" target="_blank" rel="noreferrer">Learn more <ArrowUpRight :size="16" /></a></div>
         </div>
         <div class="mcp-showcase" aria-label="Illustration of the Cynosure MCP directory">
           <div class="floating-service float-github"><img :src="`${assetBase}mcp-icons/github-icon.svg`" alt="" /></div>
@@ -315,7 +315,7 @@ function closeMenu() {
           <h2>Your AI, ready<br /><em>for real work.</em></h2>
           <p>Connect a model, add the tools and memory it needs, and put your ideas to work in one private workspace.</p>
           <div class="hero-actions"><a class="button primary platform-download"
-              href="https://github.com/andreasjhagen/Cynosure/releases/latest"><span>Download for {{ currentPlatform
+              href="https://github.com/Cynosure-AI/cynosure-ai.github.io/releases"><span>Download for {{ currentPlatform
                 }}</span>
               <ArrowDown :size="17" />
             </a></div>
@@ -330,7 +330,7 @@ function closeMenu() {
           <div class="download-alternates">
             <span>Also available for</span>
             <a v-for="platform in alternatePlatforms" :key="platform"
-              href="https://github.com/andreasjhagen/Cynosure/releases/latest">{{ platform }}</a>
+              href="https://github.com/Cynosure-AI/cynosure-ai.github.io/releases">{{ platform }}</a>
           </div>
           <small>Free to use · No tracking · Your data stays yours</small>
         </div>
@@ -340,8 +340,8 @@ function closeMenu() {
 
   <footer><a class="brand" href="#top"><img :src="`${assetBase}logo.png`" alt="" /><span>CYNOSURE</span></a>
     <p>© 2026 Cynosure. Free to use</p>
-    <div><a href="https://github.com/andreasjhagen/Cynosure#readme">Documentation</a><a
-        href="https://github.com/andreasjhagen/Cynosure/releases">Releases</a><a
+    <div><a href="https://cynosure-ai.github.io/docs/">Documentation</a><a
+        href="https://github.com/Cynosure-AI/cynosure-ai.github.io/releases">Releases</a><a
         href="https://github.com/andreasjhagen/Cynosure/issues">Support</a></div>
   </footer>
 </template>

@@ -16,8 +16,8 @@ Key capabilities highlighted on the page:
 
 Cynosure is free to use and available for Windows, macOS, and Linux.
 
-- Documentation: https://github.com/andreasjhagen/Cynosure#readme
-- Releases: https://github.com/andreasjhagen/Cynosure/releases
+- Documentation: https://cynosure-ai.github.io/docs/
+- Downloads: https://github.com/Cynosure-AI/cynosure-ai.github.io/releases
 
 ## About this repository
 
