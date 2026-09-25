@@ -11,9 +11,9 @@ The static production output is written to `.output/public/`. No runtime server 
 
 ## Organization GitHub Pages site
 
-GitHub serves an organization's root Pages URL from a repository named exactly `<organization>.github.io`. For this site, the repository must be `Cynosure-AI/Cynosure-AI.github.io`; a repository named `Cynosure-AI/Cynosure-AI` will instead get a project URL under `/Cynosure-AI/`. Rename or move this repository to `Cynosure-AI/Cynosure-AI.github.io` before publishing. The deployment workflow checks the repository name so it cannot publish the root-path build to a project URL by accident.
+The workflow builds and publishes the site on every push to `main`, when a GitHub release is published, or when run manually. It builds for the root Pages URL `https://cynosure-ai.github.io/`, which GitHub serves from a repository named `Cynosure-AI/Cynosure-AI.github.io`.
 
-In the repository's **Settings → Pages**, choose **GitHub Actions** as the build and deployment source. Publish a GitHub release in this repository to build and deploy its tagged version, or run **Publish organization site** manually from the Actions tab for an initial deployment. The site will be available at `https://cynosure-ai.github.io/` after the deployment succeeds.
+In the repository's **Settings → Pages**, choose **GitHub Actions** as the build and deployment source. The site will be available at `https://cynosure-ai.github.io/` after the deployment succeeds.
 
 ## Styling
 
