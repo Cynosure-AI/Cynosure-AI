@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
-    "build": "nuxt generate",
+    "build": "pnpm css:audit && nuxt generate",
     "build:ssr": "nuxt build",
     "preview": "nuxt preview",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "css:audit": "node scripts/css-audit.mjs"
   },
   "dependencies": {
     "@lucide/vue": "^1.47.0",
@@ -16,6 +17,8 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.4",
+    "postcss": "8.5.28",
+    "postcss-selector-parser": "7.1.6",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.3.11"
