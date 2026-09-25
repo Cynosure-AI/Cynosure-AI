@@ -107,7 +107,7 @@ function closeMenu() {
     </a>
     <nav aria-label="Main navigation">
       <a href="#features" @click="closeMenu">Capabilities</a>
-      <a href="#workspace" @click="closeMenu">Use Cases</a>
+      <a href="#use-cases" @click="closeMenu">Use Cases</a>
       <a href="#download" @click="closeMenu">Pricing</a>
       <a href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Documentation
         <span>↗</span></a>
@@ -152,7 +152,7 @@ function closeMenu() {
       <div class="overview-title"><div class="section-kicker">A complete AI workspace</div><h2>Everything you need<br />to go further.</h2></div>
       <a class="overview-card" href="#features-detail"><span class="overview-icon"><Box :size="26" /></span><div><h3>Models</h3><p>Use your own models or connect any provider API. Switch, compare, and customize for your workflow.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
       <a class="overview-card" href="#memory"><span class="overview-icon"><Database :size="26" /></span><div><h3>Memory</h3><p>Give your AI a long-term memory. Reference past work, build context, and keep knowledge at hand.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
-      <a class="overview-card" href="#workspace"><span class="overview-icon"><Sparkles :size="26" /></span><div><h3>Agents &amp; Tools</h3><p>Add tools, create agents, and automate repetitive work. Turn ideas into powerful workflows.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
+      <a class="overview-card" href="#use-cases"><span class="overview-icon"><Sparkles :size="26" /></span><div><h3>Agents &amp; Tools</h3><p>Add tools, create agents, and automate repetitive work. Turn ideas into powerful workflows.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
     </section>
 
 
@@ -253,52 +253,58 @@ function closeMenu() {
       </div>
     </section>
 
-    <section class="personalize">
-      <div class="section-kicker reveal">Your workspace. Your way.</div>
+    <section class="personalize" id="use-cases">
+      <div class="section-kicker reveal">Use cases</div>
       <div class="personal-heading reveal">
         <div class="personal-copy">
           <h2>Make it <em>yours.</em></h2>
         </div>
-        <p>From how Cynosure looks and listens to how every tool is allowed to act, the workspace is designed to adapt
-          to you—not the other way around.</p>
+        <p>Start with a question or hand Cynosure a task. Connect the tools you use and bring conversations, files, research, and everyday work into one place.</p>
       </div>
-      <div class="personal-feature-grid reveal" aria-label="Workspace personalization and control features">
+      <div class="personal-feature-grid reveal" aria-label="Cynosure use cases">
         <article>
-          <Palette :size="21" /><span>Make it feel like yours</span>
-          <h3>Themes</h3>
-          <p>Choose from distinct workspace themes and display options built for long sessions.</p>
+          <MessageCircle :size="21" /><span>01 / COMMUNICATION</span>
+          <h3>Stay on top of conversations.</h3>
+          <ul><li>Draft, reply to, search, and organize emails and messages.</li><li>Find unanswered requests, follow-ups, and loose ends.</li></ul>
+          <p class="use-case-tools">Gmail · Outlook · Slack</p>
         </article>
 
         <article>
-          <Mic2 :size="21" /><span>Speak locally or remotely</span>
-          <h3>Voice Input</h3>
-          <p>Use local or remote speech-to-text providers and use your voice to give commands.</p>
+          <Search :size="21" /><span>02 / WEB &amp; RESEARCH</span>
+          <h3>Turn browsing into answers.</h3>
+          <ul><li>Research topics, websites, products, jobs, prices, and offers.</li><li>Extract, compare, summarize, and save what matters.</li></ul>
+          <p class="use-case-tools">Browser · YouTube · Connected sources</p>
         </article>
 
         <article>
-          <ShieldCheck :size="21" /><span>Policy for every tool</span>
-          <h3>Tool Control</h3>
-          <p>Set fine-grained, per-tool policies while destructive actions remain behind a human confirmation gate.</p>
+          <FolderOpen :size="21" /><span>03 / FILES &amp; FOLDERS</span>
+          <h3>Bring order to your files.</h3>
+          <ul><li>Analyze, rename, move, group, and organize local files.</li><li>Spot duplicates, old files, and messy downloads; convert formats.</li></ul>
+          <p class="use-case-tools">Local files · Google Drive</p>
         </article>
 
         <article>
-          <EyeOff :size="21" /><span>No telemetry. Full stop.</span>
-          <h3>Privacy</h3>
-          <p>No tracking, usage analytics, or hidden data collection from Cynosure.</p>
+          <FileText :size="21" /><span>04 / MEDIA &amp; DOCUMENTS</span>
+          <h3>Work with more than text.</h3>
+          <ul><li>Pull text from screenshots, scans, PDFs, and images.</li><li>Generate images and video clips for your projects.</li></ul>
+          <p class="use-case-tools">Documents · Images · Video</p>
         </article>
 
         <article>
-          <BarChart3 :size="21" /><span>Know what gets used</span>
-          <h3>Usage Analytics</h3>
-          <p>Keep model, tool, and agent usage visible so your setup never becomes a black box.</p>
+          <BrainCircuit :size="21" /><span>05 / MEMORY &amp; KNOWLEDGE</span>
+          <h3>Find what you already know.</h3>
+          <ul><li>Search across chats, files, notes, and documents.</li><li>Connect related knowledge and summarize it when you need it.</li></ul>
+          <p class="use-case-tools">Memory · Obsidian · Notes</p>
         </article>
 
         <article>
-          <DatabaseBackup :size="21" /><span>Back up and move freely</span>
-          <h3>Fully Local</h3>
-          <p>The whole application runs locally, ensuring your data never leaves your device.</p>
+          <Settings2 :size="21" /><span>06 / AUTOMATION</span>
+          <h3>Put repeat work in motion.</h3>
+          <ul><li>Handle browser forms, desktop apps, and recurring workflows.</li><li>Triage GitHub issues and run multi-step tasks with previews and confirmations.</li></ul>
+          <p class="use-case-tools">GitHub · Browser · Schedules</p>
         </article>
       </div>
+      <div class="personal-extras reveal"><span>THE LITTLE EXTRAS</span><p><Palette :size="16" /> Themes</p><p><Mic2 :size="16" /> Voice input</p><p><ShieldCheck :size="16" /> Tool permissions</p><p><EyeOff :size="16" /> No tracking</p><p><BarChart3 :size="16" /> Usage insights</p><p><DatabaseBackup :size="16" /> Local workspace</p></div>
     </section>
 
     <section class="cta-section" id="download">
