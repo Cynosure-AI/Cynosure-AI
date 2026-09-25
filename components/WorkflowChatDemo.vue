@@ -186,7 +186,6 @@ onBeforeUnmount(() => {
   <div ref="root" class="workflow-demo" aria-label="Illustrated Cynosure task conversation">
     <div class="workflow-demo-top">
       <div class="workflow-demo-identity"><span class="workflow-demo-logo"><img src="/logo.png" alt="" /></span><span><strong>Cynosure</strong><small>Working across your tools</small></span></div>
-      <button class="workflow-replay" type="button" aria-label="Replay conversation" @click="play"><RotateCcw :size="15" /> <span>Replay</span></button>
     </div>
 
     <div class="workflow-demo-tabs" aria-label="Example workflows">
