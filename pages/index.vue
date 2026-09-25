@@ -219,71 +219,51 @@ function closeMenu() {
     </section>
 
     <section class="memory-section" id="memory">
-      <div class="section-kicker reveal">Memory, connected</div>
+      <div class="section-kicker reveal">Memory + knowledge graph</div>
       <div class="memory-heading reveal">
-        <h2>Always the right context.<br /><em>Always up to date.</em></h2>
-        <p>Cynosure automatically reviews all conversations for key facts, connects related information over time, and
-          learns your preferences and skills. Its memory helps it see the bigger picture as you work together.</p>
+        <h2>A memory that grows<br /><em>with your work.</em></h2>
+        <p>Cynosure turns useful details from your conversations into connected knowledge. It remembers your projects, preferences, and people, then brings the right context back when you need it.</p>
       </div>
-      <div class="memory-feature-list">
-        <article class="feature large memory-feature reveal">
-          <div class="feature-copy">
-
-            <span class="feature-overline">FOCUSED RETRIEVAL</span>
-            <h3>Memory that assembles the right context</h3>
-            <p>When you ask a question, Cynosure searches relevant memories and their connections, filters and reranks
-              the results, then brings the most useful context into the conversation.</p>
-            <div class="tags"><span>Tool + auto retrieval</span><span>Parallel queries</span><span>Lean context</span>
-            </div>
+      <div class="memory-grid">
+        <article class="memory-card memory-map-card reveal">
+          <div class="memory-card-copy">
+            <span class="feature-overline">FACTS + CONNECTIONS</span>
+            <h3>See how everything connects.</h3>
+            <p>Useful facts become part of a knowledge graph that links people, projects, decisions, preferences, and skills. Explore and edit what Cynosure remembers.</p>
           </div>
-          <div class="memory-layers" role="img"
-            aria-label="Five animated layers search semantically, run multiple queries, search the knowledge graph, rerank and curate, and serve focused context in under four seconds.">
-            <div class="memory-stage stage-search">
-              <div class="stage-label"><b>01</b>
-                <Search class="stage-icon" :size="17" /><span>Search semantically</span>
-              </div>
-            </div>
-            <div class="memory-stage stage-query">
-              <div class="stage-label"><b>02</b>
-                <Network class="stage-icon" :size="17" /><span>Search knowledge graph</span>
-              </div>
-            </div>
-            <div class="memory-stage stage-filter">
-              <div class="stage-label"><b>03</b>
-                <ListFilter class="stage-icon" :size="17" /><span>Filter results</span>
-              </div>
-            </div>
-            <div class="memory-stage stage-rerank">
-              <div class="stage-label"><b>04</b>
-                <ArrowDownUp class="stage-icon" :size="17" /><span>Rerank &amp; curate</span>
-              </div>
-            </div>
-            <div class="memory-stage stage-serve">
-              <div class="stage-label"><b>05</b>
-                <PanelTopOpen class="stage-icon" :size="17" /><span>Serve to context</span>
-              </div>
-            </div>
+          <div class="knowledge-map" role="img" aria-label="Illustration of a project linked to a person, launch date, feedback, and communication preference">
+            <div class="map-label"><Network :size="14" /> KNOWLEDGE GRAPH</div>
+            <svg class="knowledge-lines" viewBox="0 0 600 290" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M300 145 L113 76 M300 145 L491 69 M300 145 L105 223 M300 145 L495 218" />
+              <circle cx="300" cy="145" r="4" /><circle cx="113" cy="76" r="3" /><circle cx="491" cy="69" r="3" /><circle cx="105" cy="223" r="3" /><circle cx="495" cy="218" r="3" />
+            </svg>
+            <div class="map-node map-center"><span><Network :size="19" /></span><strong>Project Atlas</strong><small>PROJECT</small></div>
+            <div class="map-node map-person"><span><Bot :size="17" /></span><strong>Maya</strong><small>TEAM</small></div>
+            <div class="map-node map-date"><span><CalendarClock :size="17" /></span><strong>Launch plan</strong><small>MILESTONE</small></div>
+            <div class="map-node map-feedback"><span><MessageCircle :size="17" /></span><strong>Customer feedback</strong><small>RESEARCH</small></div>
+            <div class="map-node map-preference"><span><Sparkles :size="17" /></span><strong>Concise updates</strong><small>PREFERENCE</small></div>
+          </div>
+          <div class="memory-card-foot"><span>People</span><span>Projects</span><span>Facts</span><span>Preferences</span></div>
+        </article>
+        <article class="memory-card memory-recall-card reveal">
+          <div class="memory-card-copy">
+            <span class="feature-overline">FOCUSED RECALL</span>
+            <h3>The right detail, right on time.</h3>
+            <p>When you ask, Cynosure searches related memories, ranks what matters, and adds a focused summary to the conversation.</p>
+          </div>
+          <div class="recall-preview" aria-hidden="true">
+            <div class="recall-question"><Search :size="16" /><span>What changed on Project Atlas?</span></div>
+            <div class="recall-result"><span><CircleCheck :size="14" /> RELATED MEMORY</span><strong>Launch plan updated after customer feedback</strong><small>Connected to Project Atlas · Research</small></div>
           </div>
         </article>
-        <article class="feature large graph-feature reveal">
-          <div class="feature-copy">
-
-            <span class="feature-overline">KNOWLEDGE GRAPH + DREAMING MODE</span>
-            <h3>Memory that grows along with you</h3>
-            <p>Your knowledge graph connects people, projects, facts, preferences, and skills so Cynosure can understand
-              how they fit together. Inspect those connections in the app.
-              <br><br>Dreaming Mode revisits past conversations while you are away, linking related ideas and
-              consolidating useful knowledge.</p>
-            <div class="dream-status"><i></i><span><b>DREAMING MODE</b><small>Reflecting · connecting ·
-                  consolidating</small></span><em>ACTIVE</em></div>
-            <div class="tags"><span>Source grounded</span><span>Editable memory</span><span>Runs locally</span></div>
+        <article class="memory-card memory-dream-card reveal">
+          <div class="memory-card-copy">
+            <span class="feature-overline">DREAMING MODE</span>
+            <h3>Learning continues in the background.</h3>
+            <p>While you're away, Cynosure revisits conversations to extract missed facts, connect related ideas, and keep its knowledge useful.</p>
           </div>
-          <figure class="product-shot memory-graph-shot"><img src="/screenshots/memory-graph.png"
-              alt="Cynosure knowledge graph showing connected memories, people, projects, and facts" loading="lazy" />
-            <figcaption><span>Living memory</span> Inspect every connection and keep the source in view.</figcaption>
-          </figure>
+          <div class="dream-preview" aria-hidden="true"><div class="dream-preview-head"><BrainCircuit :size="22" /><span><strong>Dreaming Mode</strong><small>Reflecting on past conversations</small></span><i></i></div><div class="dream-steps"><span>Review conversations</span><span>Find new facts</span><span>Connect ideas</span></div></div>
         </article>
-
       </div>
     </section>
 
