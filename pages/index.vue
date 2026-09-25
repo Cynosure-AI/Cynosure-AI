@@ -179,17 +179,6 @@ function closeMenu() {
 
 
 
-    <section class="trust-strip" aria-label="Supported capabilities">
-      <p>ALL COMMON REMOTE AND LOCAL PROVIDERS. A HUGE VARIETY OF MODELS.</p>
-      <div class="provider-list"><span><i><img src="/providers/openai.png" alt="" /></i>OpenAI</span><span><i><img
-              src="/providers/anthropic.png" alt="" /></i>Anthropic</span><span><i><img
-              src="/providers/google-gemini.png" alt="" /></i>Gemini</span><span><i><img src="/providers/ollama.png"
-              alt="" /></i>Ollama</span><span><i><img src="/providers/lmstudio.png" alt="" /></i>LM
-          Studio</span><span><i><img src="/providers/openrouter.png" alt="" /></i>OpenRouter</span></div>
-    </section>
-
-
-
     <section class="intro product-overview" id="features-detail">
       <div class="mcp-heading reveal">
         <div><div class="section-kicker">MCP Directory</div><h2>Add functionality<br /><em>in a few clicks.</em></h2><p>Find and add MCP servers in Cynosure’s built-in store, powered by Smithery and the official MCP Registry. Bring a custom server whenever the directory doesn’t cover your workflow.</p></div>
@@ -326,23 +315,41 @@ function closeMenu() {
     </section>
 
     <section class="cta-section" id="download">
-      <div class="cta-atmosphere" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="cta-atmosphere" aria-hidden="true"></div>
       <div class="cta-inner">
         <div class="cta-copy reveal">
-          <div class="eyebrow"><span></span> Your workspace is ready</div>
-          <h2>Bring your AI<br /><em>into focus.</em></h2>
-          <p>One private workspace for the models, knowledge, tools, and agents that move your work forward.</p>
+          <div class="eyebrow"><span></span> Start building with Cynosure</div>
+          <h2>Your AI, ready<br /><em>for real work.</em></h2>
+          <p>Connect a model, add the tools and memory it needs, and put your ideas to work in one private workspace.</p>
           <div class="hero-actions"><a class="button primary platform-download"
               href="https://github.com/andreasjhagen/Cynosure/releases/latest"><span>Download for {{ currentPlatform
                 }}</span>
               <ArrowDown :size="17" />
             </a></div>
+          <div class="cta-providers">
+            <span class="cta-providers-title">Choose your provider</span>
+            <ul>
+              <li>OpenAI</li><li>Ollama</li>
+              <li>Anthropic</li><li>LM Studio</li>
+              <li>Gemini</li><li>OpenRouter</li>
+            </ul>
+          </div>
           <div class="download-alternates">
             <span>Also available for</span>
             <a v-for="platform in alternatePlatforms" :key="platform"
               href="https://github.com/andreasjhagen/Cynosure/releases/latest">{{ platform }}</a>
           </div>
           <small>Free to use · No tracking · Your data stays yours</small>
+        </div>
+        <div class="cta-showcase reveal delay-1" aria-label="Cynosure brings models, tools, memory, and agents into one workspace">
+          <div class="cta-showcase-top"><span><img src="/logo.png" alt="" /> CYNOSURE</span><span class="cta-showcase-status"><i></i> WORKSPACE READY</span></div>
+          <div class="cta-showcase-core"><div class="cta-core-ring"><div class="cta-core-icon"><Sparkles :size="35" /></div></div><span>ONE WORKSPACE</span><strong>Everything<br />connected.</strong><p>One place for the context and capabilities your AI needs to get things done.</p></div>
+          <div class="cta-capability-grid">
+            <div><Box :size="21" /><span><strong>Models</strong><small>Choose your intelligence</small></span><ArrowUpRight :size="15" /></div>
+            <div><Settings2 :size="21" /><span><strong>Tools</strong><small>Take action anywhere</small></span><ArrowUpRight :size="15" /></div>
+            <div><Database :size="21" /><span><strong>Memory</strong><small>Keep the right context</small></span><ArrowUpRight :size="15" /></div>
+            <div><Bot :size="21" /><span><strong>Agents</strong><small>Put work in motion</small></span><ArrowUpRight :size="15" /></div>
+          </div>
         </div>
       </div>
     </section>
