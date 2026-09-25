@@ -315,7 +315,6 @@ function closeMenu() {
     </section>
 
     <section class="cta-section" id="download">
-      <div class="cta-atmosphere" aria-hidden="true"></div>
       <div class="cta-inner">
         <div class="cta-copy reveal">
           <div class="eyebrow"><span></span> Start building with Cynosure</div>
@@ -340,16 +339,6 @@ function closeMenu() {
               href="https://github.com/andreasjhagen/Cynosure/releases/latest">{{ platform }}</a>
           </div>
           <small>Free to use · No tracking · Your data stays yours</small>
-        </div>
-        <div class="cta-showcase reveal delay-1" aria-label="Cynosure brings models, tools, memory, and agents into one workspace">
-          <div class="cta-showcase-top"><span><img src="/logo.png" alt="" /> CYNOSURE</span><span class="cta-showcase-status"><i></i> WORKSPACE READY</span></div>
-          <div class="cta-showcase-core"><div class="cta-core-ring"><div class="cta-core-icon"><Sparkles :size="35" /></div></div><span>ONE WORKSPACE</span><strong>Everything<br />connected.</strong><p>One place for the context and capabilities your AI needs to get things done.</p></div>
-          <div class="cta-capability-grid">
-            <div><Box :size="21" /><span><strong>Models</strong><small>Choose your intelligence</small></span><ArrowUpRight :size="15" /></div>
-            <div><Settings2 :size="21" /><span><strong>Tools</strong><small>Take action anywhere</small></span><ArrowUpRight :size="15" /></div>
-            <div><Database :size="21" /><span><strong>Memory</strong><small>Keep the right context</small></span><ArrowUpRight :size="15" /></div>
-            <div><Bot :size="21" /><span><strong>Agents</strong><small>Put work in motion</small></span><ArrowUpRight :size="15" /></div>
-          </div>
         </div>
       </div>
     </section>
