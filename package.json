@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
-    "generate": "pnpm css:audit && nuxt generate",
+    "build": "pnpm css:audit && nuxt generate",
     "build:ssr": "nuxt build",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "typecheck": "nuxt typecheck",
     "css:audit": "node scripts/css-audit.mjs"
