@@ -148,7 +148,7 @@ function closeMenu() {
 
 
     <section class="trust-strip" aria-label="Supported capabilities">
-      <p>WORKS WITH ANY PROVIDER. EVERY MODEL.</p>
+      <p>ALL COMMON REMOTE AND LOCAL PROVIDERS. A HUGE VARIETY OF MODELS.</p>
       <div class="provider-list"><span><i><img src="/providers/openai.png" alt="" /></i>OpenAI</span><span><i><img
               src="/providers/anthropic.png" alt="" /></i>Anthropic</span><span><i><img
               src="/providers/google-gemini.png" alt="" /></i>Gemini</span><span><i><img src="/providers/ollama.png"
@@ -161,19 +161,21 @@ function closeMenu() {
     <section class="intro product-overview" id="features">
       <div class="section-kicker reveal">Your stack, your way</div>
       <div class="intro-heading reveal">
-        <h2>Start minimal.<br /><em>Add what matters.</em></h2>
+        <h2>Easy to start.<br /><em>Powerful to configure.</em></h2>
         <div class="intro-summary">
-          <p>Cynosure is customizable from the first launch—including the default system prompt. Shape a personal AI
-            harness around the way you work.</p>
+          <p>Just add a provider API key or connect a model running locally. There is little to configure before your
+            first conversation, with models, prompts, tools, and agents ready to customize when you want more control.</p>
         </div>
       </div>
 
+
+
       <article class="mcp-spotlight reveal">
         <div class="feature-copy mcp-copy">
-          <span class="feature-overline">EXTENSIBILITY, BY DESIGN</span>
-          <h3>All your favorite MCPs,<br />at your fingertips.</h3>
-          <p>Browse MCP servers directly inside Cynosure, and add them to your workspace
-            in a few clicks. Bring a custom server whenever the directory does not cover your workflow.</p>
+          <span class="feature-overline">MCP STORE</span>
+          <h3>Add functionality<br />in a few clicks.</h3>
+          <p>Find and add MCP servers in Cynosure’s built-in store, powered by Smithery and the official MCP Registry.
+            Bring a custom server whenever the directory does not cover your workflow.</p>
           <div class="mcp-chips"><span>Browse in app</span><span>One-click add</span><span>Bring your own MCP</span>
           </div>
         </div>
@@ -205,8 +207,8 @@ function closeMenu() {
       <div class="section-kicker reveal">Memory, connected</div>
       <div class="memory-heading reveal">
         <h2>Always the right context.<br /><em>Always up to date.</em></h2>
-        <p>Memory in Cynosure is file-based and continuously updated in the background to ensure it learns from failure,
-          success and new information. </p>
+        <p>Cynosure automatically reviews all conversations for key facts, connects related information over time, and
+          learns your preferences and skills. Its memory helps it see the bigger picture as you work together.</p>
       </div>
       <div class="memory-feature-list">
         <article class="feature large memory-feature reveal">
@@ -214,11 +216,8 @@ function closeMenu() {
 
             <span class="feature-overline">FOCUSED RETRIEVAL</span>
             <h3>Memory that assembles the right context</h3>
-            <p>Retrieval is layered to ensure it always provides exactly what the task needs.
-              It combines semantic searching in chunks, filters it by relevance and enriches it with it's internal
-              knowledge-graph.
-              Finally reranks it by it down to the best fits and serves it as context.
-            </p>
+            <p>When you ask a question, Cynosure searches relevant memories and their connections, filters and reranks
+              the results, then brings the most useful context into the conversation.</p>
             <div class="tags"><span>Tool + auto retrieval</span><span>Parallel queries</span><span>Lean context</span>
             </div>
           </div>
@@ -256,12 +255,10 @@ function closeMenu() {
 
             <span class="feature-overline">KNOWLEDGE GRAPH + DREAMING MODE</span>
             <h3>Memory that grows along with you</h3>
-            <p>Your knowledge graph makes people, projects, facts, and their relationships visible. This provides useful
-              context to the AI and can be inspected in the UI.
-              <br><br>Turn on Dreaming
-              Mode and Cynosure quietly reviews past conversations, connects related ideas, and consolidates useful
-              knowledge while you are away.
-            </p>
+            <p>Your knowledge graph connects people, projects, facts, preferences, and skills so Cynosure can understand
+              how they fit together. Inspect those connections in the app.
+              <br><br>Dreaming Mode revisits past conversations while you are away, linking related ideas and
+              consolidating useful knowledge.</p>
             <div class="dream-status"><i></i><span><b>DREAMING MODE</b><small>Reflecting · connecting ·
                   consolidating</small></span><em>ACTIVE</em></div>
             <div class="tags"><span>Source grounded</span><span>Editable memory</span><span>Runs locally</span></div>
@@ -280,8 +277,8 @@ function closeMenu() {
       <div class="section-kicker light reveal">Work beyond the window</div>
       <div class="workspace-heading reveal">
         <h2>Your agents don’t<br />clock out when <em>you do.</em></h2>
-        <p>Create agents for distinct roles, then reuse them as sub-agents inside other agents. Each specialist handles
-          its part of a complex workflow, with its own model, memory, and tools.</p>
+        <p>Schedule time-based checkups and tasks, from a daily brief to a recurring review. Create agents for distinct
+          roles, each with its own model, memory, and tools, and reuse them in larger workflows.</p>
       </div>
       <div class="workflow reveal">
         <div class="workflow-col">
@@ -309,7 +306,7 @@ function closeMenu() {
             <div class="channel discord">⌘</div>
             <div class="channel slack">#</div>
           </div>
-          <div class="delivery">Telegram · Discord · Slack</div>
+          <div class="delivery">Chat and get updates via Telegram · Discord · Slack</div>
         </div>
       </div>
       <figure class="product-shot schedule-shot reveal"><img src="/screenshots/schedule.png"
