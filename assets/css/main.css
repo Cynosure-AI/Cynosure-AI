@@ -737,7 +737,9 @@ html {
 .cta-section {
   text-align: center;
   padding: 115px max(6%, calc((100vw - 1410px) / 2));
-  background: linear-gradient(#0c101280, #0c1012a8), url('/bg_planet_horizon.png') center bottom / cover no-repeat #0c1012;
+  background:
+    linear-gradient(#0c101280, #0c1012a8),
+    url("/bg_planet_horizon.png") center bottom / cover no-repeat #0c1012;
   border-top: 1px solid #38282a;
 }
 .cta-inner {
@@ -2317,10 +2319,11 @@ main {
 }
 .dream-preview {
   margin-top: 22px;
-  padding: 14px;
+  padding: 14px 15px 16px;
   border: 1px solid #75423f;
   border-radius: 8px;
-  background: url("/bg_dream.png") center / cover no-repeat;
+  overflow: hidden;
+  background: #1b2429;
 }
 .dream-preview-head {
   display: flex;
@@ -2339,35 +2342,53 @@ main {
 }
 .dream-preview-head strong {
   color: #f2f4f5;
-  font-size: 11px;
+  font-size: 12px;
 }
 .dream-preview-head small {
   margin-top: 4px;
   color: #aeb7bd;
-  font-size: 9px;
-}
-.dream-preview-head i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #ff756d;
-  box-shadow: 0 0 12px #ff756d;
+  font-size: 10px;
 }
 .dream-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+.dream-steps::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 16.67%;
+  right: 16.67%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff7771, #a84846 48%, #ff7771);
+  box-shadow: 0 0 12px #f35c58;
+}
+.dream-step {
+  position: relative;
+  z-index: 1;
   display: flex;
-  gap: 6px;
-  margin-top: 15px;
-}
-.dream-steps span {
-  flex: 1;
-  padding: 7px 5px;
-  border: 1px solid #59403e;
-  border-radius: 4px;
-  color: #e2c4c0;
-  font-size: 8px;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #c4cdd3;
+  font-size: 10px;
+  line-height: 1.15;
   text-align: center;
-  background: rgba(255, 87, 82, 0.3);
 }
+.dream-step-icon {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  border: 1px solid #74433e;
+  border-radius: 50%;
+  color: var(--accent);
+  background: #1a2023;
+  box-shadow: 0 0 0 5px #192024bb;
+}
+
 @media (max-width: 1050px) {
   .memory-heading {
     grid-template-columns: 1fr;

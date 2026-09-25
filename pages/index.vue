@@ -14,12 +14,12 @@ import {
   Plus,
   Send,
   Settings2,
-  Terminal,
   BarChart3,
   BrainCircuit,
   Check,
   DatabaseBackup,
   EyeOff,
+  FileText,
   FolderOpen,
   ListFilter,
   Menu,
@@ -41,14 +41,14 @@ const currentPlatform = ref<DownloadPlatform>('Windows')
 const alternatePlatforms = computed(() => downloadPlatforms.filter(platform => platform !== currentPlatform.value))
 const featuredServices = [
   { name: 'Filesystem', description: 'Read, write and search local files.', category: 'Local files', icon: '' },
-  { name: 'Web Fetch', description: 'Fetch and explore web content.', category: 'Web', icon: '' },
-  { name: 'Terminal', description: 'Run terminal commands.', category: 'System', icon: '' },
+  { name: 'Gmail', description: 'Search and manage your email.', category: 'Email', icon: 'gmail-icon.svg' },
+  { name: 'Obsidian', description: 'Connect your notes and knowledge.', category: 'Knowledge', icon: 'obsidian-icon.svg' },
   { name: 'GitHub', description: 'Work with issues, repos and pull requests.', category: 'Development', icon: 'github-icon.svg' },
   { name: 'Google Drive', description: 'Access and manage your files.', category: 'Cloud files', icon: 'google-drive-color-icon.svg' },
   { name: 'Slack', description: 'Read and send messages.', category: 'Messaging', icon: 'slack-icon.svg' },
   { name: 'YouTube', description: 'Search and transcribe videos.', category: 'Media', icon: 'youtube-color-icon.svg' },
-  { name: 'Notion', description: 'Read and update your pages.', category: 'Knowledge', icon: '' },
-  { name: 'Weather', description: 'Get current weather and forecasts.', category: 'Information', icon: '' },
+  { name: 'Discord', description: 'Connect with your communities.', category: 'Messaging', icon: 'discord-color-icon.svg' },
+  { name: 'Canva', description: 'Find and manage your designs.', category: 'Design', icon: 'canva-icon.svg' },
 ] as const
 let revealObserver: IntersectionObserver | undefined
 
@@ -200,7 +200,7 @@ function closeMenu() {
             <div class="mcp-browser-head"><span><img src="/logo.png" alt="" /> MCP STORE</span></div>
             <div class="mcp-browser-body">
               <aside class="mcp-sidebar"><div class="mcp-search"><Search :size="13" /> Search MCP servers...</div><b>Recommended <small>12</small></b><span>Official <small>48</small></span><span>Smithery <small>312</small></span><em>INSTALLED</em><span>File System</span><span>Web &amp; Data</span><span>Development</span><span>System</span><span class="mcp-custom">＋ Add Custom Server</span></aside>
-              <div class="mcp-results"><div class="mcp-results-head"><div><strong>Recommended</strong><small>Handpicked MCP servers for everyday use.</small></div><span>Popular⌄</span></div><div class="mcp-result-grid"><div v-for="service in featuredServices" :key="service.name" class="mcp-result-card"><div class="mcp-result-title"><span class="mcp-result-icon"><img v-if="service.icon" :src="`/mcp-icons/${service.icon}`" alt="" /><FolderOpen v-else-if="service.name === 'Filesystem'" :size="25" /><Terminal v-else-if="service.name === 'Terminal'" :size="25" /><span v-else>{{ service.name === 'Web Fetch' ? '◎' : service.name === 'Weather' ? '☀' : 'N' }}</span></span><div><strong>{{ service.name }}</strong><small>{{ service.description }}</small></div></div><div class="mcp-result-foot"><span>↧ {{ service.category }}</span><span class="install-label">Install</span></div></div></div></div>
+              <div class="mcp-results"><div class="mcp-results-head"><div><strong>Recommended</strong><small>Handpicked MCP servers for everyday use.</small></div><span>Popular⌄</span></div><div class="mcp-result-grid"><div v-for="service in featuredServices" :key="service.name" class="mcp-result-card"><div class="mcp-result-title"><span class="mcp-result-icon"><img v-if="service.icon" :src="`/mcp-icons/${service.icon}`" alt="" /><FolderOpen v-else :size="25" /></span><div><strong>{{ service.name }}</strong><small>{{ service.description }}</small></div></div><div class="mcp-result-foot"><span>↧ {{ service.category }}</span><span class="install-label">Install</span></div></div></div></div>
             </div>
           </div>
         </div>
@@ -251,7 +251,14 @@ function closeMenu() {
             <h3>Learning continues in the background.</h3>
             <p>While you're away, Cynosure revisits conversations to extract missed facts, connect related ideas, and keep its knowledge useful.</p>
           </div>
-          <div class="dream-preview" aria-hidden="true"><div class="dream-preview-head"><BrainCircuit :size="22" /><span><strong>Dreaming Mode</strong><small>Reflecting on past conversations</small></span></div><div class="dream-steps"><span>Review conversations</span><span>Find new facts</span><span>Connect ideas</span></div></div>
+          <div class="dream-preview" aria-hidden="true">
+            <div class="dream-preview-head"><BrainCircuit :size="23" /><span><strong>Dreaming Mode</strong><small>Reflecting on past conversations</small></span></div>
+            <div class="dream-steps">
+              <div class="dream-step"><span class="dream-step-icon"><MessageCircle :size="19" /></span><span>Review<br />conversations</span></div>
+              <div class="dream-step"><span class="dream-step-icon"><FileText :size="19" /></span><span>Extract<br />new facts</span></div>
+              <div class="dream-step"><span class="dream-step-icon"><Network :size="19" /></span><span>Connect<br />related ideas</span></div>
+            </div>
+          </div>
         </article>
       </div>
     </section>
