@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/main.css',
     '~/assets/css/theme.css',
+    '~/assets/css/makeover.css',
   ],
   vite: {
     plugins: [tailwindcss()],

@@ -3,6 +3,18 @@ import {
   ArrowDownUp,
   ArrowDown,
   ArrowUpRight,
+  Bot,
+  Box,
+  CalendarClock,
+  CircleCheck,
+  Clock3,
+  Database,
+  MessageCircle,
+  Monitor,
+  Plus,
+  Send,
+  Settings2,
+  Terminal,
   BarChart3,
   BrainCircuit,
   Check,
@@ -27,21 +39,16 @@ type DownloadPlatform = typeof downloadPlatforms[number]
 const menuOpen = ref(false)
 const currentPlatform = ref<DownloadPlatform>('Windows')
 const alternatePlatforms = computed(() => downloadPlatforms.filter(platform => platform !== currentPlatform.value))
-const mcpServices = [
-  { name: 'GitHub', category: 'Development', icon: 'github-icon.svg' },
-  { name: 'Gmail', category: 'Email', icon: 'gmail-icon.svg' },
-  { name: 'Outlook', category: 'Email', icon: 'microsoft-outlook-icon.svg' },
-  { name: 'Google Drive', category: 'Cloud files', icon: 'google-drive-color-icon.svg' },
-  { name: 'Slack', category: 'Messaging', icon: 'slack-icon.svg' },
-  { name: 'Discord', category: 'Messaging', icon: 'discord-color-icon.svg' },
-  { name: 'Claude Code', category: 'Development', icon: 'claude-code-icon.svg' },
-  { name: 'Codex', category: 'Development', icon: 'codex-icon.svg' },
-  { name: 'VS Code', category: 'Development', icon: 'visual-studio-code-icon.svg' },
-  { name: 'Chrome', category: 'Browser', icon: 'google-chrome-icon.svg' },
-  { name: 'Obsidian', category: 'Knowledge', icon: 'obsidian-icon.svg' },
-  { name: 'Canva', category: 'Design', icon: 'canva-icon.svg' },
-  { name: 'Reddit', category: 'Community', icon: 'reddit-icon.svg' },
-  { name: 'YouTube', category: 'Media', icon: 'youtube-color-icon.svg' },
+const featuredServices = [
+  { name: 'Filesystem', description: 'Read, write and search local files.', category: 'Local files', icon: '' },
+  { name: 'Web Fetch', description: 'Fetch and explore web content.', category: 'Web', icon: '' },
+  { name: 'Terminal', description: 'Run terminal commands.', category: 'System', icon: '' },
+  { name: 'GitHub', description: 'Work with issues, repos and pull requests.', category: 'Development', icon: 'github-icon.svg' },
+  { name: 'Google Drive', description: 'Access and manage your files.', category: 'Cloud files', icon: 'google-drive-color-icon.svg' },
+  { name: 'Slack', description: 'Read and send messages.', category: 'Messaging', icon: 'slack-icon.svg' },
+  { name: 'YouTube', description: 'Search and transcribe videos.', category: 'Media', icon: 'youtube-color-icon.svg' },
+  { name: 'Notion', description: 'Read and update your pages.', category: 'Knowledge', icon: '' },
+  { name: 'Weather', description: 'Get current weather and forecasts.', category: 'Information', icon: '' },
 ] as const
 let revealObserver: IntersectionObserver | undefined
 
@@ -100,8 +107,8 @@ function closeMenu() {
     </a>
     <nav aria-label="Main navigation">
       <a href="#features" @click="closeMenu">Capabilities</a>
-      <a href="#memory" @click="closeMenu">Memory</a>
-      <a href="#workspace" @click="closeMenu">Agents</a>
+      <a href="#workspace" @click="closeMenu">Use Cases</a>
+      <a href="#download" @click="closeMenu">Pricing</a>
       <a href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Documentation
         <span>↗</span></a>
     </nav>
@@ -120,8 +127,7 @@ function closeMenu() {
       <div class="hero-copy reveal">
         <div class="eyebrow"><span></span> The AI workspace that remembers</div>
         <h1>Your models.<br />Your tools. <br/><em>Your AI.</em></h1>
-        <p class="hero-lede">A focused command center for working with local and remote AI. Connect any model, build
-          persistent memory, and let capable agents get real work done.</p>
+        <p class="hero-lede">Cynosure is the AI workspace for models, tools, memory, agents, artifacts, and automations — all in one place. Bring your own models or use a provider API, then add the tools and memory your workflows need.</p>
         <div class="hero-actions">
           <a class="button primary" href="https://github.com/andreasjhagen/Cynosure/releases/latest"><span>Download
               for {{ currentPlatform }}</span>
@@ -132,17 +138,43 @@ function closeMenu() {
             <ArrowUpRight :size="14" />
           </a>
         </div>
-        <div class="hero-notes"><span>Free to use</span><span>Desktop &amp; web</span></div>
+        <div class="hero-notes">
+          <span><Monitor :size="23" /><span>Desktop &amp; Web<small>Free to use</small></span></span>
+          <span><Database :size="23" /><span>Bring your own models<small>Or use any provider API</small></span></span>
+          <span><Box :size="23" /><span>Tools, memory, agents<small>All in one workspace</small></span></span>
+        </div>
       </div>
 
       <figure class="hero-visual reveal delay-1">
-        <div class="orb orb-one"></div>
-        <div class="orb orb-two"></div>
-        <div class="screenshot-frame"><img src="/cynosure-app.png"
-            alt="Cynosure desktop app showing the chat workspace, agents, artifacts, memories, and model controls" />
+        <div class="hero-app" aria-label="Preview of Cynosure's chat workspace">
+          <div class="hero-app-top"><div class="traffic"><i></i><i></i><i></i></div></div>
+          <div class="hero-app-body">
+            <aside class="hero-app-sidebar">
+              <div class="hero-app-brand"><img src="/logo.png" alt="" /> CYNOSURE</div>
+              <div class="hero-app-item active"><MessageCircle :size="12" /> Chat</div>
+              <div class="hero-app-item"><Box :size="12" /> Models</div>
+              <div class="hero-app-item"><Settings2 :size="12" /> Tools</div>
+              <div class="hero-app-item"><Bot :size="12" /> Agents</div>
+              <div class="hero-app-item"><FolderOpen :size="12" /> Artifacts</div>
+              <div class="hero-app-item"><Database :size="12" /> Memory</div>
+              <div class="hero-app-recent">RECENT CHATS</div>
+              <div v-for="chat in ['Build a research agent', 'Analyze dataset trends', 'Create marketing assets', 'Summarize user feedback']" :key="chat" class="hero-app-chat"><span>✦</span>{{ chat }}</div>
+            </aside>
+            <div class="hero-app-main">
+              <div class="hero-app-toolbar"><span><MessageCircle :size="12" /> Chat</span><span class="hero-app-new"><Plus :size="12" /> New Chat</span></div>
+              <div class="hero-app-center"><div class="hero-app-bot"><Bot :size="28" /></div><strong>WHAT'S ON YOUR MIND?</strong><p>Chat with your models, use your tools, access your memory,<br />create agents, and automate your workflows.</p></div>
+              <div class="hero-app-composer"><span>Type a message or add tools...</span><div><span><Search :size="12" /> Search</span><span><Settings2 :size="12" /> Tools</span><span><Database :size="12" /> Memory</span><span><Bot :size="12" /> Agents</span><b>Cynosure Intelligence⌄</b><Send :size="12" /></div></div>
+            </div>
+          </div>
         </div>
-        <figcaption>One workspace for chat, agents, memory, artifacts, and automations.</figcaption>
       </figure>
+    </section>
+
+    <section class="overview-band" id="features">
+      <div class="overview-title"><div class="section-kicker">A complete AI workspace</div><h2>Everything you need<br />to go further.</h2></div>
+      <a class="overview-card" href="#features-detail"><span class="overview-icon"><Box :size="26" /></span><div><h3>Models</h3><p>Use your own models or connect any provider API. Switch, compare, and customize for your workflow.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
+      <a class="overview-card" href="#memory"><span class="overview-icon"><Database :size="26" /></span><div><h3>Memory</h3><p>Give your AI a long-term memory. Reference past work, build context, and keep knowledge at hand.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
+      <a class="overview-card" href="#workspace"><span class="overview-icon"><Sparkles :size="26" /></span><div><h3>Agents &amp; Tools</h3><p>Add tools, create agents, and automate repetitive work. Turn ideas into powerful workflows.</p><span class="card-link">Learn more <ArrowUpRight :size="15" /></span></div></a>
     </section>
 
 
@@ -158,49 +190,32 @@ function closeMenu() {
 
 
 
-    <section class="intro product-overview" id="features">
-      <div class="section-kicker reveal">Your stack, your way</div>
-      <div class="intro-heading reveal">
-        <h2>Easy to start.<br /><em>Powerful to configure.</em></h2>
-        <div class="intro-summary">
-          <p>Just add a provider API key or connect a model running locally. There is little to configure before your
-            first conversation, with models, prompts, tools, and agents ready to customize when you want more control.</p>
+    <section class="intro product-overview" id="features-detail">
+      <div class="mcp-heading reveal">
+        <div><div class="section-kicker">MCP Directory</div><h2>Add functionality<br /><em>in a few clicks.</em></h2><p>Find and add MCP servers in Cynosure’s built-in store, powered by Smithery and the official MCP Registry. Bring a custom server whenever the directory doesn’t cover your workflow.</p></div>
+        <p>Just add a provider API key or connect a model running locally. There is little to configure before your first conversation, with models, prompts, tools, and agents ready to customize when you want more control.</p>
+      </div>
+      <div class="mcp-stage reveal">
+        <div class="mcp-steps">
+          <div><span><Search :size="28" /></span><p><strong>Discover</strong>Browse curated and official registries.</p></div>
+          <div><span><Plus :size="28" /></span><p><strong>Install</strong>Add MCP servers with one click.</p></div>
+          <div><span><Settings2 :size="28" /></span><p><strong>Configure</strong>Set API keys and permissions.</p></div>
+          <div><span><Box :size="28" /></span><p><strong>Use instantly</strong>Tools are available in chat right away.</p></div>
+          <div class="mcp-actions"><a class="button primary" href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Explore MCP servers <ArrowUpRight :size="16" /></a><a class="button secondary" href="https://github.com/andreasjhagen/Cynosure#readme" target="_blank" rel="noreferrer">Learn more <ArrowUpRight :size="16" /></a></div>
+        </div>
+        <div class="mcp-showcase" aria-label="Illustration of the Cynosure MCP directory">
+          <div class="floating-service float-github"><img src="/mcp-icons/github-icon.svg" alt="" /></div>
+          <div class="floating-service float-slack"><img src="/mcp-icons/slack-icon.svg" alt="" /></div>
+          <div class="floating-service float-drive"><img src="/mcp-icons/google-drive-color-icon.svg" alt="" /></div>
+          <div class="mcp-browser">
+            <div class="mcp-browser-head"><span><img src="/logo.png" alt="" /> MCP STORE</span></div>
+            <div class="mcp-browser-body">
+              <aside class="mcp-sidebar"><div class="mcp-search"><Search :size="13" /> Search MCP servers...</div><b>Recommended <small>12</small></b><span>Official <small>48</small></span><span>Smithery <small>312</small></span><span>Glama <small>156</small></span><em>INSTALLED</em><span>File System</span><span>Web &amp; Data</span><span>Development</span><span>System</span><span class="mcp-custom">＋ Add Custom Server</span></aside>
+              <div class="mcp-results"><div class="mcp-results-head"><div><strong>Recommended</strong><small>Handpicked MCP servers for everyday use.</small></div><span>Popular⌄</span></div><div class="mcp-result-grid"><div v-for="service in featuredServices" :key="service.name" class="mcp-result-card"><div class="mcp-result-title"><span class="mcp-result-icon"><img v-if="service.icon" :src="`/mcp-icons/${service.icon}`" alt="" /><FolderOpen v-else-if="service.name === 'Filesystem'" :size="25" /><Terminal v-else-if="service.name === 'Terminal'" :size="25" /><span v-else>{{ service.name === 'Web Fetch' ? '◎' : service.name === 'Weather' ? '☀' : 'N' }}</span></span><div><strong>{{ service.name }}</strong><small>{{ service.description }}</small></div></div><div class="mcp-result-foot"><span>↧ {{ service.category }}</span><span class="install-label">Install</span></div></div></div></div>
+            </div>
+          </div>
         </div>
       </div>
-
-
-
-      <article class="mcp-spotlight reveal">
-        <div class="feature-copy mcp-copy">
-          <span class="feature-overline">MCP STORE</span>
-          <h3>Add functionality<br />in a few clicks.</h3>
-          <p>Find and add MCP servers in Cynosure’s built-in store, powered by Smithery and the official MCP Registry.
-            Bring a custom server whenever the directory does not cover your workflow.</p>
-          <div class="mcp-chips"><span>Browse in app</span><span>One-click add</span><span>Bring your own MCP</span>
-          </div>
-        </div>
-        <div class="mcp-browser" aria-label="MCP server browser with popular compatible services">
-          <div class="mcp-browser-head"><span><i></i> MCP DIRECTORY</span><b>BROWSE + ADD</b></div>
-          <div class="service-grid">
-            <div v-for="service in mcpServices" :key="service.name" class="service">
-              <img :src="`/mcp-icons/${service.icon}`" :class="{ 'dark-icon': service.name === 'GitHub' }" alt=""  />
-              <strong>{{ service.name }}</strong><small>{{ service.category }}</small>
-              <button type="button" :aria-label="`Add ${service.name} MCP`">+</button>
-            </div>
-            <div class="service"><img src="https://cdn.simpleicons.org/notion/ffffff"
-                alt="" /><strong>Notion</strong><small>Knowledge</small><button type="button"
-                aria-label="Add Notion MCP">+</button></div>
-            <div class="service">
-              <FolderOpen :size="26" /><strong>File System</strong><small>Local files</small><button type="button"
-                aria-label="Add File System MCP">+</button>
-            </div>
-
-          </div>
-          <div class="mcp-browser-foot mcp-setup-guide">
-            <span>Powered by the official MCP Registry, Smithery, and Cyno’s curated selection.</span>
-          </div>
-        </div>
-      </article>
     </section>
 
     <section class="memory-section" id="memory">
@@ -274,47 +289,12 @@ function closeMenu() {
 
     <section class="workspace" id="workspace">
       <div class="workspace-bg"></div>
-      <div class="section-kicker light reveal">Work beyond the window</div>
-      <div class="workspace-heading reveal">
-        <h2>Your agents don’t<br />clock out when <em>you do.</em></h2>
-        <p>Schedule time-based checkups and tasks, from a daily brief to a recurring review. Create agents for distinct
-          roles, each with its own model, memory, and tools, and reuse them in larger workflows.</p>
+      <div class="section-kicker light reveal">Beyond the desktop</div>
+      <div class="workspace-heading reveal"><h2>Your AI, wherever<br /><em>you are.</em></h2><p>Keep the conversation going from your favorite chat app, and schedule work for Cynosure to handle at the right time.</p></div>
+      <div class="remote-grid">
+        <article class="remote-card remote-chat reveal"><div class="remote-card-copy"><span class="feature-overline">REMOTE CHAT</span><h3>Message Cynosure from anywhere.</h3><p>Talk to your AI through Telegram, Discord, or Slack. Ask questions and continue conversations when you’re away from the workspace.</p><div class="remote-platforms"><span><Send :size="19" /> Telegram</span><span><img src="/mcp-icons/discord-color-icon.svg" alt="" /> Discord</span><span><img src="/mcp-icons/slack-icon.svg" alt="" /> Slack</span></div></div><div class="remote-chat-preview" aria-hidden="true"><div class="preview-head"><span class="preview-avatar"><img src="/logo.png" alt="" /></span><div><strong>Cynosure</strong><small>Always ready to help</small></div><span class="online-dot"></span></div><div class="preview-messages"><div class="preview-message outgoing">Can you summarize the latest project notes?</div><div class="preview-message incoming">Of course. Here are the three updates that matter most today…</div></div><div class="preview-input">Message Cynosure <Send :size="14" /></div></div></article>
+        <article class="remote-card remote-schedule reveal"><div class="remote-card-copy"><span class="feature-overline">SCHEDULES</span><h3>Put recurring work on the calendar.</h3><p>Schedule an agent to run a daily brief, weekly review, or any task you want done on a regular cadence.</p><div class="schedule-example"><CalendarClock :size="20" /><span><strong>Morning brief</strong><small>Every weekday · 08:30</small></span><CircleCheck :size="18" /></div></div><figure class="remote-schedule-shot"><img src="/screenshots/schedule.png" alt="Cynosure schedule screen showing recurring jobs and their status" loading="lazy" /></figure></article>
       </div>
-      <div class="workflow reveal">
-        <div class="workflow-col">
-          <div class="workflow-title"><span>TRIGGERS</span><i></i></div>
-          <div class="node"><b>◷</b>
-            <div><strong>Every weekday</strong><small>08:30 · Europe/Vienna</small></div>
-          </div>
-          <div class="node"><b>#</b>
-            <div><strong>New Slack message</strong><small>#weekly-research</small></div>
-          </div>
-        </div>
-        <div class="connector"><span></span><i>→</i></div>
-        <div class="workflow-col center">
-          <div class="workflow-title"><span>AGENT</span><i></i></div>
-          <div class="agent-node"><img src="/logo.png" alt="" />
-            <div><small>RESEARCH AGENT</small><strong>Morning brief</strong><span><i></i> Ready</span></div><b>7
-              tools</b>
-          </div>
-        </div>
-        <div class="connector"><span></span><i>→</i></div>
-        <div class="workflow-col">
-          <div class="workflow-title"><span>DELIVERS TO</span><i></i></div>
-          <div class="channel-row">
-            <div class="channel telegram">➤</div>
-            <div class="channel discord">⌘</div>
-            <div class="channel slack">#</div>
-          </div>
-          <div class="delivery">Chat and get updates via Telegram · Discord · Slack</div>
-        </div>
-      </div>
-      <figure class="product-shot schedule-shot reveal"><img src="/screenshots/schedule.png"
-          alt="Cynosure scheduled jobs view showing recurring agents, schedules, statuses, and controls"
-          loading="lazy" />
-        <figcaption><span>Scheduled jobs</span> Keep recurring work visible, editable, and under your control.
-        </figcaption>
-      </figure>
     </section>
 
     <section class="personalize">
