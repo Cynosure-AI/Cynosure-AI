@@ -7,7 +7,13 @@ pnpm dev
 pnpm build
 ```
 
-The static production output is written to `dist/`. Deploy that directory to any static host. No runtime server or environment variables are required. Use `pnpm build:ssr` for a server-rendered Nuxt deployment.
+The static production output is written to `.output/public/`. No runtime server or environment variables are required. Use `pnpm build:ssr` for a server-rendered Nuxt deployment.
+
+## Organization GitHub Pages site
+
+GitHub serves an organization's root Pages URL from a repository named exactly `<organization>.github.io`. For this site, the repository must be `Cynosure-AI/Cynosure-AI.github.io`; a repository named `Cynosure-AI/Cynosure-AI` will instead get a project URL under `/Cynosure-AI/`. Rename or move this repository to `Cynosure-AI/Cynosure-AI.github.io` before publishing. The deployment workflow checks the repository name so it cannot publish the root-path build to a project URL by accident.
+
+In the repository's **Settings → Pages**, choose **GitHub Actions** as the build and deployment source. Publish a GitHub release in this repository to build and deploy its tagged version, or run **Publish organization site** manually from the Actions tab for an initial deployment. The site will be available at `https://cynosure-ai.github.io/` after the deployment succeeds.
 
 ## Styling
 
