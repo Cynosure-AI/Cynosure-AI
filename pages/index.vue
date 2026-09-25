@@ -251,7 +251,7 @@ function closeMenu() {
             <h3>Learning continues in the background.</h3>
             <p>While you're away, Cynosure revisits conversations to extract missed facts, connect related ideas, and keep its knowledge useful.</p>
           </div>
-          <div class="dream-preview" aria-hidden="true"><div class="dream-preview-head"><BrainCircuit :size="22" /><span><strong>Dreaming Mode</strong><small>Reflecting on past conversations</small></span><i></i></div><div class="dream-steps"><span>Review conversations</span><span>Find new facts</span><span>Connect ideas</span></div></div>
+          <div class="dream-preview" aria-hidden="true"><div class="dream-preview-head"><BrainCircuit :size="22" /><span><strong>Dreaming Mode</strong><small>Reflecting on past conversations</small></span></div><div class="dream-steps"><span>Review conversations</span><span>Find new facts</span><span>Connect ideas</span></div></div>
         </article>
       </div>
     </section>
